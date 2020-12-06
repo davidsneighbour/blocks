@@ -2,7 +2,7 @@
 
 A collection of reusable page elements like headers, footers, content display etc. for [Hugo, the world's fastest framework for building websites](https://gohugo.io/).
 
-This is work in progress. Subscribe to releases to receive notifications about changes.
+This is work in progress. Subscribe to [releases](https://github.com/dnb-hugo/blocks/releases) to receive notifications about changes.
 
 ## Other elements in DNB Hugo
 
