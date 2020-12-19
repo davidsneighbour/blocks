@@ -1,6 +1,6 @@
 {
   "name": "@dnb-hugo/blocks-bootstrap5",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bootstrap5-Blocks for Hugo",
   "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
   "homepage": "https://github.com/dnb-hugo/blocks/tree/master/bootstrap5",
