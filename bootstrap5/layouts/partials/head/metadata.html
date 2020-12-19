@@ -1,0 +1,17 @@
+<base href="{{ .Site.BaseURL }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}">
+{{ range .AlternativeOutputFormats -}}
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+{{ end -}}
+<link rel="search" href="/opensearch.xml" type="application/opensearchdescription+xml" title="Samui Suche">
+{{ with .Params.robotsdisallow }}
+	<meta name="robots" content="noindex, nofollow, noarchive">
+{{ else }}
+	<meta name="robots" content="index, follow, archive">
+{{ end }}
+{{ if .IsTranslated }}
+{{ range .Translations }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+{{ end }}
+{{ end }}

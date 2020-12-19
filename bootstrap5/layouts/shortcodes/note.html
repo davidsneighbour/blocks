@@ -1,0 +1,7 @@
+{{/*
+- type (default info, danger, warning, success, reference)
+- see https://getbootstrap.com/docs/5.0/components/alerts/
+*/}}
+<div class="alert alert-light alert-type-{{ .Get "type" | default "info" }}" role="alert">
+{{ .Inner | markdownify }}
+</div>

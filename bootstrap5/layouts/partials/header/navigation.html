@@ -1,0 +1,35 @@
+{{/*
+- https://gohugo.io/content-management/menus/
+- https://gohugo.io/variables/menus/
+- https://gohugo.io/templates/menu-templates/
+- https://gohugo.io/functions/hasmenucurrent/
+- https://gohugo.io/functions/ismenucurrent/
+*/}}
+
+<div id="topnavigation" class="container">
+  <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="topbarMainNavigation">
+      <ul id="menu-topnavigation" class="navbar-nav mr-auto">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+          <li class="nav-item{{if or (eq $currentPage.Section .Identifier) ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) (and (eq $currentPage.Type "posts") (eq .Identifier "archive" )) (and (eq $currentPage.Kind "taxonomy") (eq .Identifier "archive" ))}} active{{end}}">
+            <a href="{{.URL}}"{{if eq .Page nil }}
+               target="_blank" rel="noopener noreferrer"{{ end }}
+               class="nav-link">
+              {{ with .Pre }}
+              <span class="icon larger light" aria-hidden="true">
+                {{ partialCached (print .) .}}
+              </span>&nbsp;
+              {{ end }}
+              {{ .Name }}
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </nav>
+  {{ partialCached "header/progress" . }}
+</div>

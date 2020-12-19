@@ -1,0 +1,18 @@
+{{ if eq ($.Param "dnb.debug") true }}
+  {{ if .Site.IsServer }}
+    <footer id="debugging">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+              {{ partial "debugprint.html" . }}
+              {{ partial "debugprint.html" .Params }}
+              {{ partial "debugprint.html" .Site }}
+              {{ partial "debugprint.html" .Site.Menus }}
+              {{ partial "debugprint.html" .Resources }}
+              {{ partial "debugprint.html" .File }}
+          </div>
+        </div>
+      </div>
+    </footer>
+  {{ end }}
+{{ end }}

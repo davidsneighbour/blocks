@@ -1,0 +1,9 @@
+{{ if eq (.Scratch.Get "hasSidebar") true }}
+    <div id="sidebar" class="col-lg-4 col-sm-12 col">
+        {{ partial "func/hook" "sidebar-start" }}
+        {{ range $.Param "dnb.sidebar.items" }}
+            {{ partialCached ( printf "sidebar/widget-%s.html" . ) $.Page }}
+        {{ end }}
+        {{ partial "func/hook" "sidebar-end" }}
+    </div>
+{{ end }}

@@ -1,0 +1,47 @@
+{{/*
+https://www.simoahava.com/web-development/static-site-search-google-app-engine-search-api/
+https://github.com/bep/bepsays.com/commit/1d7bf7fd6e7c637f28a04f93a97ebfed084c27ff
+https://discourse.gohugo.io/t/how-are-you-implementing-site-search/986/23
+*/}}
+
+<form id="search" action="/search/">
+  <input name="q" type="text" class="form-control input--xlarge" placeholder="Search blog..." autocomplete="off">
+</form>
+
+<script>
+(function($) {
+
+    var printSearchResults = function(results) {
+	  // Update the page DOM with the search results...
+	};
+
+    var endpoint = 'https://search-www-simoahava-com.appspot.com';
+
+    var getQuery = function() {
+        if (window.location.search.length === 0 || !/(\?|&)q=/.test(window.location.search)) {
+            return undefined;
+        }
+
+        var parts = window.location.search.substring(1).split('&');
+        var query = parts.map(function(part) {
+            var temp = part.split('=');
+            return temp[0] === 'q' ? temp[1] : false;
+        });
+        return query[0] || undefined;
+    };
+
+    $(document).ready(function() {
+        var query = getQuery();
+
+        if (typeof query === 'undefined') {
+            printSearchResults();
+            return;
+        } else {
+            $.get(endpoint + '?q=' + query, function(data) {
+                printSearchResults(JSON.parse(data));
+            });
+        }
+    });
+
+})(window.jQuery)
+</script>
