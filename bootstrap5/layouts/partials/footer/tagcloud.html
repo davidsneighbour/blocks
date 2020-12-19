@@ -1,0 +1,12 @@
+{{ if .IsHome }}
+  <footer id="tagcloud" class="taxonomycloud">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+      		<h3 class="text-center">{{ i18n "tags_title" }}</h3>
+       		{{ partialCached "tools/tagcloud.html" . }}
+    	  </div>
+      </div>
+    </div>
+  </footer>
+{{ end }}

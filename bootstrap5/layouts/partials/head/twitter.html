@@ -1,0 +1,50 @@
+{{/*
+
+    see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started
+    https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image
+    validation at https://cards-dev.twitter.com/validator
+    https://gohugohq.com/partials/twitter-cards-partials-for-hugo/
+
+    configuration in config.toml:
+
+    ```
+    [Params]
+    social:
+      twitter:
+        siteid: twittername
+        profileid: twittername
+        theme: dark|light
+        linkcolor: HTML color
+        dnt: on | off
+        csp: on | off
+        card: "summary_large_image"
+
+*/}}
+
+{{- $images := $.Resources.ByType "image" -}}
+{{- range first 1 $images -}}
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="{{ .Permalink }}"/>
+{{- end -}}
+
+<meta name="twitter:title" content="{{ .Title }}"/>
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}"/>
+
+{{- with .Site.Params.social.twitter.siteid -}}
+    <meta name="twitter:site" content="@{{ . }}"/>
+{{- end -}}
+{{- with .Site.Params.social.twitter.profileid -}}
+    <meta name="twitter:creator" content="@{{ . }}"/>
+{{- end -}}
+{{- with .Site.Params.social.twitter.theme -}}
+    <meta name="twitter:widgets:theme" content="{{ . }}"/>
+{{- end -}}
+{{- with .Site.Params.social.twitter.linkcolor -}}
+    <meta name="twitter:widgets:link-color" content="{{ . }}"/>
+{{- end -}}
+{{- with .Site.Params.social.twitter.dnt -}}
+    <meta name="twitter:dnt" content="{{ . }}">
+{{- end -}}
+{{- with .Site.Params.social.twitter.csp -}}
+    <meta name="twitter:widgets:csp" content="{{ . }}">
+{{- end -}}

@@ -1,0 +1,21 @@
+<div class="mb-3">
+  <h3>{{ i18n "pagination_title" | safeHTML }}</h3>
+  <div class="row">
+    {{if .PrevInSection}}
+      <div class="col-6">
+        <span class="icon larger" aria-hidden="true">
+          {{ partialCached "icons/angle-left.svg" . }}
+        </span>
+        <a href="{{.PrevInSection.Permalink}}">{{.PrevInSection.Title}}</a>
+      </div>
+    {{end}}
+    {{ if .NextInSection}}
+      <div class="col-6 text-end">
+        <a href="{{.NextInSection.Permalink}}">{{.NextInSection.Title}}</a>
+        <span class="icon larger" aria-hidden="true">
+          {{ partialCached "icons/angle-right.svg" . }}
+        </span>
+      </div>
+    {{end}}
+  </div>
+</div>

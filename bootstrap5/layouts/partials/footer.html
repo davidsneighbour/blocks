@@ -1,0 +1,22 @@
+{{ partial "footer/tagcloud.html" . }}
+{{ partialCached "footer/copyright.html" . }}
+{{ partial "footer/debugging.html" . }}
+{{ partialCached "footer/finisher.html" . }}
+{{ with partialCached "func/getJavascript.html" . }}
+<script src="{{.RelPermalink}}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" async defer type="text/javascript"></script>
+{{ end }}
+{{ partialCached "footer/google-analytics-delayed.html" . }}
+{{ partialCached "footer/adsense-delayed.html" . }}
+{{ partialCached "footer/gtm.html" . }}
+
+{{/* WebPack Javascript integration */}}
+{{ $jsPath := "/main.js" }}
+{{ $isDev := site.IsServer }}
+{{ if eq $isDev false }}
+  {{ with site.Data.dnb.webpack.config }}
+    {{ with .hash }}
+      {{ $jsPath = printf "/main.%s.js" . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+<script src="{{ $jsPath | safeHTMLAttr }}" defer async></script>
