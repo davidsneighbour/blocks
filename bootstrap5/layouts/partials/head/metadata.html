@@ -11,7 +11,7 @@
 	<meta name="robots" content="index, follow, archive">
 {{ end }}
 {{ if .IsTranslated }}
-{{ range .Translations }}
-<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
-{{ end }}
+  {{ range .Translations }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+  {{ end }}
 {{ end }}
