@@ -3,6 +3,10 @@ extended = false
 min = "0.56.0"
 
 [[module.mounts]]
+source = "data/dnb/blocks/bootstrap5"
+target = "data/dnb/blocks/bootstrap5"
+
+[[module.mounts]]
 source = "layouts"
 target = "layouts"
 
