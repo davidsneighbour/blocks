@@ -1,6 +1,6 @@
 {
   "name": "@dnb-hugo/blocks",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A collection of reusable page elements like headers, footers, content display etc. for Hugo.",
   "main": "index.js",
   "scripts": {
