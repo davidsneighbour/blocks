@@ -1,0 +1,44 @@
+<!doctype html>
+{{ $contentColumnClasses := "col" }}
+{{ .Scratch.Set "hasSidebar" false }}
+{{ if (and (isset ($.Param "dnb.sidebar") "enabled") (eq ($.Param "dnb.sidebar.enabled") true )) }}
+  {{ .Scratch.Set "hasSidebar" true }}
+  {{ $contentColumnClasses := "col-lg-8 col-sm-12 col" }}
+{{ end }}
+{{ .Scratch.Set "enableTemplateWarnings" true }}
+  {{ if (and (isset ($.Param "dnb") "enableTemplateWarnings") (eq ($.Param "dnb.enableTemplateWarnings") false )) }}
+  {{ .Scratch.Set "enableTemplateWarnings" false }}
+{{ end }}
+<html lang="{{ .Site.Language.Lang }}" class="no-js">
+{{ partial "func/hook" "setup" }}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{{ block "title" . }}{{- with .Title }}{{ . }} | {{ end }}{{ .Site.Title -}}{{ end }}</title>
+  {{ partial "func/hook" "head-start" }}
+  {{ partial "head" . }}
+  {{ partial "func/hook" "head-end" }}
+  {{ partial "head/social" . }}
+  {{ block "schema" . }}{{ end }}
+</head>
+<body id="{{ .Site.Params.Siteslug }}">
+  {{ partial "func/hook" "body-start" }}
+  {{ partial "header" . }}
+  {{ partial "func/hook" "container-start" }}
+  <main id="content" class="container">
+    <div id="contentcolumn" class="row">
+      <div id="maincolumn" class="{{ $contentColumnClasses }}">
+        {{ partial "func/hook" "content-start" }}
+        {{ block "main" . }}{{ end }}
+        {{ partial "func/hook" "content-end" }}
+      </div>
+      {{ if eq (.Scratch.Get "hasSidebar") true }}
+        {{ partial "sidebar" . }}
+      {{ end }}
+    </div>
+  </main>
+  {{ partial "func/hook" "container-end" }}
+  {{ partial "footer" . }}
+  {{ partial "func/hook" "body-end" }}
+</body>
+</html>
