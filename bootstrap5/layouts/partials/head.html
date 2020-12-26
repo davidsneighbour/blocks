@@ -2,3 +2,8 @@
 {{- with partialCached "func/getStylesheet.html" . -}}
     <link rel="stylesheet" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}">
 {{- end -}}
+
+<!-- web monetization tag -->
+{{ with site.Data.dnb.blocks.bootstrap5.config.monetization_url }}
+  <meta name="monetization" content="{{ . }}">
+{{ end }}
