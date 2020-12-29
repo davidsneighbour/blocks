@@ -2,10 +2,14 @@
   <header class="row mb-2">
     <div class="col-12">
       <div class="h1">
-        <a href="{{ site.BaseURL }}" title="{{ site.Title }}" class="blogname" rel="home">
-          {{ site.Title }}
+        <a href="{{ site.BaseURL }}" class="blogname" rel="home">
+          {{- site.Title -}}
         </a>
-        <span class="blogdescription">{{ site.Params.Description }}</span>
+        {{- with site.Params.Description -}}
+          <span class="blogdescription">
+            {{- . -}}
+          </span>
+        {{- end -}}
       </div>
     </div>
   </header>
