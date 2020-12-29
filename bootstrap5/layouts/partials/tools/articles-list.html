@@ -1,4 +1,4 @@
-{{ range first 10 .Site.RegularPages }}
+{{ range first 10 site.RegularPages }}
     <article>
       <!-- this <div> includes the title summary -->
       <div>
@@ -8,7 +8,7 @@
       {{ if .Truncated }}
       <!-- This <div> includes a read more link, but only if the summary is truncated... -->
       <div>
-        <a href="{{ .RelPermalink }}">Read More…</a>
+        <a href="{{ .RelPermalink }}">{{ i18n "read_more" }}</a>
       </div>
       {{ end }}
     </article>

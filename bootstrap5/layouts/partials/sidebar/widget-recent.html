@@ -2,7 +2,7 @@
   <h3 class="card-header">
     {{ i18n "recent_entries_sidebar" | safeHTML }}
   </h3>
-  {{ $pages := where .Site.RegularPages ".File.UniqueID" "!=" "nil" }}
+  {{ $pages := where site.RegularPages ".File.UniqueID" "!=" "nil" }}
   {{ $currentPage := . }}
   {{ $recentPages := $pages | complement (slice $currentPage) }}
   <ul class="list-group list-group-flush">

@@ -20,6 +20,7 @@
   {{ partial "func/hook" "head-end" }}
   {{ partial "head/social" . }}
   {{ block "schema" . }}{{ end }}
+  {{ partial "head/opensearch" . }}
 </head>
 <body id="{{ .Site.Params.Siteslug }}">
   {{ partial "func/hook" "body-start" }}
