@@ -1,14 +1,15 @@
 {{ with site.Author }}
-<aside class="card mb-3" id="widget-author">
-  <img src="{{ .photo.url }}" style="width:100%;height:auto;" alt="{{ .photo.title | safeHTML }}" width="350" class="card-img-top">
-  <div class="card-body">
-    <h3 class="card-title">{{ .name }}</h3>
-    <div class="card-text">
-      {{ $page := site.GetPage .description }}
-      {{ with $page }}
-        {{ .Content }}
-      {{ end }}
+  {{ $page := site.GetPage .content }}
+  {{ $photo := $page.Resources.GetMatch .photo.name }}
+  <aside class="card mb-3" id="widget-author">
+    <img src="{{ $photo.Permalink }}" alt="{{ .photo.title | safeHTML }}" width="{{ $photo.Width }}" height="{{ $photo.Height }}" class="card-img-top">
+    <div class="card-body">
+      <h3 class="card-title">{{ .name }}</h3>
+      <div class="card-text">
+        {{ with $page }}
+          {{ .Content }}
+        {{ end }}
+      </div>
     </div>
-  </div>
-</aside>
+  </aside>
 {{ end }}
