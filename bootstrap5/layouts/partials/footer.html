@@ -5,9 +5,6 @@
 {{ with partialCached "func/getJavascript.html" . }}
 <script src="{{.RelPermalink}}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" async defer type="text/javascript"></script>
 {{ end }}
-{{ partialCached "footer/google-analytics-delayed.html" . }}
-{{ partialCached "footer/adsense-delayed.html" . }}
-{{ partialCached "footer/gtm.html" . }}
 
 {{/* WebPack Javascript integration */}}
 {{ $jsPath := "/main.js" }}
