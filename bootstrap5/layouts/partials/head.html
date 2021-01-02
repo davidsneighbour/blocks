@@ -1,6 +1,12 @@
 {{- partial "head/metadata.html" . -}}
 {{- with partialCached "func/getStylesheet.html" . -}}
+  <link
+    rel="preload" href="{{ .Permalink }}"
+    integrity="{{ .Data.Integrity }}" as="style"
+    onload="this.rel='stylesheet'">
+  <noscript>
     <link rel="stylesheet" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}">
+  </noscript>
 {{- end -}}
 
 <!-- web monetization tag -->
