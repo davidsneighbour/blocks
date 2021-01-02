@@ -17,10 +17,10 @@
   <title>{{ block "title" . }}{{- with .Title }}{{ . }} | {{ end }}{{ .Site.Title -}}{{ end }}</title>
   {{ partial "func/hook" "head-start" }}
   {{ partial "head" . }}
-  {{ partial "func/hook" "head-end" }}
   {{ partial "head/social" . }}
   {{ block "schema" . }}{{ end }}
   {{ partial "head/opensearch" . }}
+  {{ partial "func/hook" "head-end" }}
 </head>
 <body id="{{ .Site.Params.Siteslug }}">
   {{ partial "func/hook" "body-start" }}
