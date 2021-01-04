@@ -2,8 +2,13 @@
 {{ partialCached "footer/copyright.html" . }}
 {{ partial "footer/debugging.html" . }}
 {{ partialCached "footer/finisher.html" . }}
+
+{{/* internal javascript integration */}}
 {{ with partialCached "func/getJavascript.html" . }}
-<script src="{{.RelPermalink}}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" async defer type="text/javascript"></script>
+<script
+  src="{{.RelPermalink}}" integrity="{{ .Data.Integrity }}"
+  crossorigin="anonymous" async defer
+  type="text/javascript"></script>
 {{ end }}
 
 {{/* WebPack Javascript integration */}}
