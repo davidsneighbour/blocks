@@ -2,9 +2,10 @@
   {{ $page := site.GetPage .content }}
   {{ $photo := $page.Resources.GetMatch .photo.name }}
   <aside class="card mb-3" id="widget-author">
-    <img src="{{ $photo.Permalink }}" alt="{{ .photo.title | safeHTML }}" width="{{ $photo.Width }}" height="{{ $photo.Height }}" class="card-img-top">
+    <img src="{{ $photo.Permalink }}"
+         loading="lazy" alt="{{ .photo.title | safeHTML }}" width="{{ $photo.Width }}" height="{{ $photo.Height }}" class="card-img-top">
     <div class="card-body">
-      <h3 class="card-title">{{ .name }}</h3>
+      <h2 class="h3 card-title">{{ .name }}</h2>
       <div class="card-text">
         {{ with $page }}
           {{ .Content }}
