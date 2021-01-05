@@ -1,0 +1,15 @@
+<ul id="menu-topnavigation" class="navbar-nav mr-auto">
+  {{ $currentPage := . }}
+  {{ range site.Menus.main }}
+    <li class="nav-item{{if or (eq $currentPage.Section .Identifier) ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) (and (eq $currentPage.Type "posts") (eq .Identifier "archive" )) (and (eq $currentPage.Kind "taxonomy") (eq .Identifier "archive" ))}} active{{end}}">
+      <a href="{{.URL}}"{{if eq .Page nil }}
+         target="_blank" rel="noopener noreferrer"{{ end }}
+         class="nav-link">
+        {{ with .Pre }}
+          <span class="icon larger light" aria-hidden="true">{{ partialCached (print .) .}}</span>&nbsp;
+        {{ end }}
+        {{ .Name }}
+      </a>
+    </li>
+  {{ end }}
+</ul>
