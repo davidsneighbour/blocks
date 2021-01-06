@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/dnb-hugo/blocks/compare/v1.0.0...v1.0.1) (2021-01-06)
+
+
+### Features
+
+* add spotify playlist widget ([51e9b33](https://github.com/dnb-hugo/blocks/commit/51e9b33c4c65a01de248e122310755dc0bbaca58))
+
+
+### Bug Fixes
+
+* add aria-labels for social media icons ([f4a03e6](https://github.com/dnb-hugo/blocks/commit/f4a03e6a3ade6590c349e0d6685fdb2ffa532207))
+* aria label for disabled pagination item ([93ebbe3](https://github.com/dnb-hugo/blocks/commit/93ebbe38e38f8b8562a74408cc33b6412b0dc88f))
+* fixing some nav issues and js in the footer ([c96f25f](https://github.com/dnb-hugo/blocks/commit/c96f25fda803882b9be17950a84578124c37aad0))
+* load theme javascript file compiled by webpack from asset directory ([8181df3](https://github.com/dnb-hugo/blocks/commit/8181df32ca631328f9b8453a2e2a2755aaeeaa4f))
+* speed optimization on layouts and header files ([6846959](https://github.com/dnb-hugo/blocks/commit/68469591e5039138d4552d13c3c17a142c7426b3))
+
 ## [1.0.0](https://github.com/dnb-hugo/blocks/compare/v0.0.5...v1.0.0) (2021-01-02)
 
 ### 0.0.5 (2021-01-02)
