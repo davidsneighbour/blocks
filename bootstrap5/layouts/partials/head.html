@@ -1,12 +1,17 @@
 {{- partial "head/metadata.html" . -}}
 {{- with partialCached "func/getStylesheet.html" . -}}
+<link rel="stylesheet"
+  href="{{ .Permalink }}"
+  media="print"
+  onload="this.media='all'; this.onload=null;"
+  integrity="{{ .Data.Integrity }}">
+<noscript>
   <link
-    rel="preload" href="{{ .Permalink }}"
-    integrity="{{ .Data.Integrity }}" as="style"
-    onload="this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}">
-  </noscript>
+    rel="stylesheet"
+    media="all"
+    href="{{ .Permalink }}"
+    integrity="{{ .Data.Integrity }}">
+</noscript>
 {{- end -}}
 
 <!-- web monetization tag -->
