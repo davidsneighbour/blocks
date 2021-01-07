@@ -6,14 +6,14 @@
   {{ $contentColumnClasses := "col-lg-8 col-sm-12 col" }}
 {{ end }}
 {{ .Scratch.Set "enableTemplateWarnings" true }}
-  {{ if (and (isset ($.Param "dnb") "enableTemplateWarnings") (eq ($.Param "dnb.enableTemplateWarnings") false )) }}
+{{ if (and (isset ($.Param "dnb") "enableTemplateWarnings") (eq ($.Param "dnb.enableTemplateWarnings") false )) }}
   {{ .Scratch.Set "enableTemplateWarnings" false }}
 {{ end }}
 <html lang="{{ .Site.Language.Lang }}" class="no-js">
 {{ partial "func/hook" "setup" }}
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="{{ site.Data.dnb.blocks.bootstrap5.config.charset | default "utf-8" }}">
+  <meta name="viewport" content="{{ site.Data.dnb.blocks.bootstrap5.config.viewport | default "width=device-width, initial-scale=1, shrink-to-fit=no" }}">
   <title>{{ block "title" . }}{{- with .Title }}{{ . }} | {{ end }}{{ .Site.Title -}}{{ end }}</title>
   {{ partial "func/hook" "head-start" }}
   {{ partial "head" . }}
@@ -27,7 +27,7 @@
   {{ partial "header" . }}
   {{ partial "func/hook" "container-start" }}
   <main id="content" class="container">
-    <div id="contentcolumn" class="row">
+    <div class="row">
       <div id="maincolumn" class="{{ $contentColumnClasses }}">
         {{ partial "func/hook" "content-start" }}
         {{ block "main" . }}{{ end }}
@@ -43,3 +43,4 @@
   {{ partial "func/hook" "body-end" }}
 </body>
 </html>
+{{ partial "func/hook" "teardown" }}
