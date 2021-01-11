@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/dnb-hugo/blocks/compare/v1.0.1...v1.0.2) (2021-01-11)
+
+
+### Features
+
+* add meta tag configuration and special teardown hook ([ee920ef](https://github.com/dnb-hugo/blocks/commit/ee920ef6a07f430a9cf5929f64a2785fc36aaf12))
+
+
+### Bug Fixes
+
+* remove inline stylesheets from radio widget ([618939f](https://github.com/dnb-hugo/blocks/commit/618939f7d771093a29204a83c829e04101e495c1))
+
 ### [1.0.1](https://github.com/dnb-hugo/blocks/compare/v1.0.0...v1.0.1) (2021-01-06)
 
 
