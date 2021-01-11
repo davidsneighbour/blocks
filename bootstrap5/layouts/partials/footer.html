@@ -9,22 +9,3 @@
   crossorigin="anonymous" async defer
   type="text/javascript"></script>
 {{ end }}
-
-{{/* WebPack Javascript integration */}}
-{{ $jsPath := "/main.js" }}
-{{ $isDev := site.IsServer }}
-{{ if eq $isDev false }}
-  {{ with site.Data.dnb.webpack.config }}
-    {{ with .hash }}
-      {{ $jsPath = printf "/main.%s.js" . }}
-    {{ end }}
-  {{ end }}
-{{ end }}
-
-{{ $file := resources.Get (printf "%s" $jsPath) }}
-{{ with $file }}
-<script
-  src="{{ .RelPermalink}}" integrity="{{ .Data.Integrity }}"
-  crossorigin="anonymous" async defer
-  type="text/javascript"></script>
-{{ end }}
