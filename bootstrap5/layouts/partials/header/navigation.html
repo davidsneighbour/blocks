@@ -1,17 +1,11 @@
-<div class="container" id="topnavigation">
-  <nav class="navbar navbar-dark bg-dark sticky-top navbar-expand-md navbar-collapse-sm">
+<div class="container sticky-top " id="topnavigation">
+  <nav class="navbar navbar-dark bg-dark sticky-top navbar-expand-lg">
     <div class="container-fluid">
-      <button
-        class="navbar-toggler" type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarTogglerDemo01"
-        aria-controls="navbarTogglerDemo01"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <a class="navbar-brand d-md-none" href="{{ site.BaseURL }}">{{ site.Title }}</a>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand d-xs-inline-block d-sm-inline-block d-md-none" href="/">{{ site.Title }}</a>
         {{ partial "header/navigation/main-navigation" . }}
       </div>
     </div>
