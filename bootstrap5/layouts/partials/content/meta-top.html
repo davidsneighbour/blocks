@@ -9,7 +9,7 @@
           </span>&nbsp;
           {{ range $i, $e := . -}}
             {{ if $i }}/{{ end }}
-            {{ partialCached "content/meta/tag.html" $e "tags" $e }}
+            {{ partialCached "content/meta/tag.html" $e "tags" $e $.Lang }}
           {{- end }}
         {{- end }}
       </div>
