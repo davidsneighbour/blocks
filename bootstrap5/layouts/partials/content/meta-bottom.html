@@ -7,9 +7,9 @@
           <span class="icon" aria-hidden="true">
             {{ partialCached "icons/pencil-alt.svg" . }}
           </span>&nbsp;
-          Von&nbsp;
+          {{ i18n "written_by" }}&nbsp;
           <address class="vcard author post-author">
-            <span class="fn"> 
+            <span class="fn">
               {{- with $.Param "author.name" -}}
                 {{- with $.Param "author.homepage" -}}
                   <a href="{{ $.Param "author.homepage" }}" rel="author external">

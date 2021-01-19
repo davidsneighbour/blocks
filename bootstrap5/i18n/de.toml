@@ -108,4 +108,7 @@ other = "Die gewünschte Seite wurde nicht gefunden. Fakt."
 other = "Suchen"
 
 [read_more]
-other = "Read More…"
+other = "Weiter lesen…"
+
+[written_by]
+other = "Von"
