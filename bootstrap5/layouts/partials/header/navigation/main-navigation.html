@@ -6,7 +6,7 @@
          target="_blank" rel="noopener noreferrer"{{ end }}
          class="nav-link {{if or (eq $currentPage.Section .Identifier) ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) (and (eq $currentPage.Type "posts") (eq .Identifier "archive" )) (and (eq $currentPage.Kind "taxonomy") (eq .Identifier "archive" ))}} active{{end}}">
         {{ with .Pre }}
-          <span class="icon larger light" aria-hidden="true">{{ partialCached (print .) .}}</span>&nbsp;
+          <span class="icon larger light" aria-hidden="true">{{ partialCached (print .) . $.Lang }}</span>&nbsp;
         {{ end }}
         {{ .Name }}
       </a>

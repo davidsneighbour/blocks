@@ -1,9 +1,9 @@
-{{ partialCached "footer/copyright.html" . }}
+{{ partialCached "footer/copyright.html" . $.Lang }}
 {{ partial "footer/debugging.html" . }}
-{{ partialCached "footer/finisher.html" . }}
+{{ partialCached "footer/finisher.html" . $.Lang }}
 
 {{/* internal javascript integration */}}
-{{ with partialCached "func/getJavascript.html" . }}
+{{ with partialCached "func/getJavascript.html" . $.Lang }}
 <script
   src="{{.RelPermalink}}" integrity="{{ .Data.Integrity }}"
   crossorigin="anonymous" async defer

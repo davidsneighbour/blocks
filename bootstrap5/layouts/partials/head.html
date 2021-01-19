@@ -1,5 +1,5 @@
 {{- partial "head/metadata.html" . -}}
-{{- with partialCached "func/getStylesheet.html" . -}}
+{{- with partialCached "func/getStylesheet.html" . $.Lang -}}
 <link rel="stylesheet"
   href="{{ .Permalink }}"
   media="print"
