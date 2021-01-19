@@ -4,7 +4,7 @@
     {{if .PrevInSection}}
       <div class="col-6">
         <span class="icon larger" aria-hidden="true">
-          {{ partialCached "icons/angle-left.svg" . }}
+          {{ partialCached "icons/angle-left.svg" . $.Lang }}
         </span>
         <a href="{{.PrevInSection.Permalink}}">{{.PrevInSection.Title}}</a>
       </div>
@@ -13,7 +13,7 @@
       <div class="col-6 text-end">
         <a href="{{.NextInSection.Permalink}}">{{.NextInSection.Title}}</a>
         <span class="icon larger" aria-hidden="true">
-          {{ partialCached "icons/angle-right.svg" . }}
+          {{ partialCached "icons/angle-right.svg" . $.Lang }}
         </span>
       </div>
     {{end}}

@@ -38,7 +38,7 @@ The number of elements on all pages in this paginator
     <li class="page-item">
       <a class="page-link" href="{{ .URL }}" aria-label="First">
         <span class="icon larger light" aria-hidden="true">
-          {{ partialCached "icons/angle-double-left.svg" . }}
+          {{ partialCached "icons/angle-double-left.svg" . $.Lang }}
         </span>
       </a>
     </li>
@@ -46,7 +46,7 @@ The number of elements on all pages in this paginator
     <li class="page-item{{ if not $.Paginator.HasPrev }} disabled{{ end }}">
       <a class="page-link" href="{{ if $.Paginator.HasPrev }}{{ $.Paginator.Prev.URL }}{{ end }}" aria-label="Previous">
         <span class="icon larger light" aria-hidden="true">
-          {{ partialCached "icons/angle-left.svg" . }}
+          {{ partialCached "icons/angle-left.svg" . $.Lang }}
         </span>
       </a>
     </li>
@@ -68,7 +68,7 @@ The number of elements on all pages in this paginator
     <li class="page-item disabled">
       <a href="#" class="page-link" aria-label="disabled">
         <span class="icon larger light" aria-hidden="true">
-          {{ partialCached "icons/ellipsis-h.svg" . }}
+          {{ partialCached "icons/ellipsis-h.svg" . $.Lang }}
         </span>
       </a>
     </li>
@@ -77,7 +77,7 @@ The number of elements on all pages in this paginator
     <li class="page-item{{ if not $.Paginator.HasNext }} disabled{{ end }}">
       <a class="page-link" href="{{ if $.Paginator.HasNext }}{{ $.Paginator.Next.URL }}{{ end }}" aria-label="Next">
         <span class="icon larger light" aria-hidden="true">
-          {{ partialCached "icons/angle-right.svg" . }}
+          {{ partialCached "icons/angle-right.svg" . $.Lang }}
         </span>
       </a>
     </li>
@@ -85,7 +85,7 @@ The number of elements on all pages in this paginator
       <li class="page-item">
         <a class="page-link" href="{{ .URL }}" aria-label="Last">
           <span class="icon larger light" aria-hidden="true">
-            {{ partialCached "icons/angle-double-right.svg" . }}
+            {{ partialCached "icons/angle-double-right.svg" . $.Lang }}
           </span>
         </a>
       </li>
