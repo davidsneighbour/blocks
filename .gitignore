@@ -1,5 +1,4 @@
 package-lock.json
-**/resources
 hugo.log
 
 # Created by https://www.toptal.com/developers/gitignore/api/hugo,go,node,phpstorm,webstorm
