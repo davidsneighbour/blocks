@@ -2,6 +2,10 @@
 
 A collection of reusable page elements like headers, footers, content display etc. for [Hugo, the world's fastest framework for building websites](https://gohugo.io/).
 
+Available frameworks:
+
+- [Bootstrap 5](https://github.com/dnb-hugo/blocks/tree/main/bootstrap5)
+
 This is work in progress. Subscribe to [releases](https://github.com/dnb-hugo/blocks/releases) to receive notifications about changes.
 
 ## Other elements in DNB Hugo
