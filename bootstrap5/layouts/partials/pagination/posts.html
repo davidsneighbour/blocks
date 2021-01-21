@@ -43,8 +43,9 @@ The number of elements on all pages in this paginator
       </a>
     </li>
     {{ end }}
+
     <li class="page-item{{ if not $.Paginator.HasPrev }} disabled{{ end }}">
-      <a class="page-link" href="{{ if $.Paginator.HasPrev }}{{ $.Paginator.Prev.URL }}{{ end }}" aria-label="Previous">
+      <a class="page-link" href="{{ if $.Paginator.HasPrev }}{{ $.Paginator.Prev.URL }}{{ else }}#{{ end }}" aria-label="Previous">
         <span class="icon larger light" aria-hidden="true">
           {{ partialCached "icons/angle-left.svg" . $.Lang }}
         </span>
@@ -75,7 +76,7 @@ The number of elements on all pages in this paginator
     {{ end }}
     {{ end }}
     <li class="page-item{{ if not $.Paginator.HasNext }} disabled{{ end }}">
-      <a class="page-link" href="{{ if $.Paginator.HasNext }}{{ $.Paginator.Next.URL }}{{ end }}" aria-label="Next">
+      <a class="page-link" href="{{ if $.Paginator.HasNext }}{{ $.Paginator.Next.URL }}{{ else }}#{{ end }}" aria-label="Next">
         <span class="icon larger light" aria-hidden="true">
           {{ partialCached "icons/angle-right.svg" . $.Lang }}
         </span>
