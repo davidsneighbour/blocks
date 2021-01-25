@@ -22,7 +22,7 @@
   {{ partial "head/opensearch" . }}
   {{ partial "func/hook" "head-end" }}
 </head>
-<body id="{{ .Site.Params.Siteslug }}">
+<body id="{{ .Site.Params.Siteslug | default "garuda-garuda" }}">
   {{ partial "func/hook" "body-start" }}
   {{ partial "header" . }}
   {{ partial "func/hook" "container-start" }}
