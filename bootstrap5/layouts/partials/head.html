@@ -18,3 +18,9 @@
 {{ with site.Data.dnb.blocks.bootstrap5.config.monetization_url }}
   <meta name="monetization" content="{{ . }}">
 {{ end }}
+
+<!-- webmanifest partial (if it exists) -->
+{{ $partialPath := "head/pwa.html" }}
+{{ if templates.Exists (printf "partials/%s" $partialPath) }}
+  {{ partialCached $partialPath . }}
+{{ end }}
