@@ -1,16 +1,4 @@
 # DNB Hugo / Garuda / English template strings
-[share_title]
-other = "Sharing"
-
-[share_facebook]
-other = "Share on Facebook"
-
-[share_twitter]
-other = "Share on Twitter"
-
-[share_linkedin]
-other = "Share on LinkedIn"
-
 [related_title]
 other = "Related posts"
 
@@ -34,9 +22,6 @@ other = "Entries tagged with {{ . }}"
 
 [archive_sidebar]
 other = "Archive"
-
-[socialmedia_sidebar]
-other = "Social Media"
 
 [recent_entries_sidebar]
 other = "Recent Posts"

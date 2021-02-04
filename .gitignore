@@ -1,5 +1,6 @@
 package-lock.json
 hugo.log
+replacements
 
 # Created by https://www.toptal.com/developers/gitignore/api/hugo,go,node,phpstorm,webstorm
 # Edit at https://www.toptal.com/developers/gitignore?templates=hugo,go,node,phpstorm,webstorm
