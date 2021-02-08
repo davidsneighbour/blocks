@@ -10,4 +10,6 @@
   type="text/javascript"></script>
 {{ end }}
 {{ partialCached "func/getJavascriptByBuild" . $.Lang }}
-{{ partialCached "footer/service-worker" . }}
+
+{{/* service worker integration via dnb-hugo/components/pwa */}}
+{{ partial "footer/service-worker" . }}
