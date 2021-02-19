@@ -20,7 +20,7 @@
 {{ end }}
 
 <!-- webmanifest partial (if it exists) -->
-{{ $partialPath := "head/pwa.html" }}
-{{ if templates.Exists (printf "partials/%s" $partialPath) }}
-  {{ partialCached $partialPath . }}
-{{ end }}
+{{- $partialPath := "head/pwa.html" -}}
+{{- if templates.Exists (printf "partials/%s" $partialPath) -}}
+  {{- partialCached $partialPath . -}}
+{{- end -}}
