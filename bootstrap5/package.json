@@ -12,8 +12,8 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "11.0.0",
-    "@commitlint/config-conventional": "11.0.0",
+    "@commitlint/cli": "12.0.0",
+    "@commitlint/config-conventional": "12.0.0",
     "@dnb-hugo/browserslist-config": "github:dnb-hugo/browserslist-config",
     "@dnb-hugo/commitlint-config": "github:dnb-hugo/commitlint-config",
     "@dnb-hugo/eslint-config": "github:dnb-hugo/eslint-config",
@@ -21,8 +21,7 @@
     "@dnb-hugo/standard-version-config": "github:dnb-hugo/standard-version-config",
     "@dnb-hugo/stylelint-config": "github:dnb-hugo/stylelint-config",
     "@dnb-hugo/textlint-config": "github:dnb-hugo/textlint-config",
-    "husky": "4.3.8",
-    "standard-version": "9.1.0"
+    "standard-version": "9.1.1"
   },
   "homepage": "https://github.com/dnb-hugo/blocks/tree/master/bootstrap5",
   "license": "MIT",
@@ -31,10 +30,5 @@
     "release": "standard-version --release-as patch -a -t \"bootstrap5/v\" --releaseCommitMessageFormat \"chore(release): bootstrap5/v{{currentTag}}\" && ./bin/release-hook-postrelease.sh",
     "release-major": "standard-version --release-as major -a -t \"bootstrap5/v\" --releaseCommitMessageFormat \"chore(release): bootstrap5/v{{currentTag}}\" && ./bin/release-hook-postrelease.sh",
     "release-next": "standard-version --release-as minor -a -t \"bootstrap5/v\" --releaseCommitMessageFormat \"chore(release): bootstrap5/v{{currentTag}}\" && ./bin/release-hook-postrelease.sh"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   }
 }
