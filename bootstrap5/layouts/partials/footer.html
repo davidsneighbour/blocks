@@ -5,7 +5,7 @@
 {{/* internal javascript integration */}}
 {{ with partialCached "func/getJavascript.html" . $.Lang }}
 <script
-  src="{{.RelPermalink}}" integrity="{{ .Data.Integrity }}"
+  src="{{.RelPermalink}}" integrity="{{ .Data.Integrity | html }}"
   crossorigin="anonymous" async defer
   type="text/javascript"></script>
 {{ end }}

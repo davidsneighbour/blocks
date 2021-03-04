@@ -4,13 +4,13 @@
   href="{{ .Permalink }}"
   media="print"
   onload="this.media='all'; this.onload=null;"
-  integrity="{{ .Data.Integrity }}">
+  integrity="{{ .Data.Integrity | html }}">
 <noscript>
   <link
     rel="stylesheet"
     media="all"
     href="{{ .Permalink }}"
-    integrity="{{ .Data.Integrity }}">
+    integrity="{{ .Data.Integrity | html }}">
 </noscript>
 {{- end -}}
 
