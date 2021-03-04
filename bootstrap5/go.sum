@@ -1,5 +1,5 @@
-github.com/dnb-hugo/components/auditor v0.0.0-20210224143729-44a389b9ea75 h1:uaGe+BmD/mwDmNIrak8/TxZGbeYh5g1rIFvDjw21u4I=
-github.com/dnb-hugo/components/auditor v0.0.0-20210224143729-44a389b9ea75/go.mod h1:SzNnVpyO7QeF+EFxSYeHOU3wwJFN9/f60RpnpeulzwY=
+github.com/dnb-hugo/components/auditor v0.0.0-20210224145917-8571725398cc h1:9myHjT0glzzhWi4g/NAF7C9enpoZcKFK+/YRIsYwXPE=
+github.com/dnb-hugo/components/auditor v0.0.0-20210224145917-8571725398cc/go.mod h1:SzNnVpyO7QeF+EFxSYeHOU3wwJFN9/f60RpnpeulzwY=
 github.com/dnb-hugo/components/functions v1.0.17 h1:W913rHJlR6N2vVnhS+v9GJnPu7YNYqvym24h4IXyF4E=
 github.com/dnb-hugo/components/functions v1.0.17/go.mod h1:D1wuewBIRi/K+JS40raRu4iPYReMNYguOF/vXJ7Jv2c=
 github.com/dnb-hugo/components/pwa v1.1.6 h1:O/zhOGHVQ8eKq63ySIMaSBbmVrBNdeIFVy185wCfCqE=
