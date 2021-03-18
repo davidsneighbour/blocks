@@ -5,12 +5,12 @@
     <img src="{{ $photo.Permalink }}"
          loading="lazy" alt="{{ .photo.title | safeHTML }}" width="{{ $photo.Width }}" height="{{ $photo.Height }}" class="card-img-top">
     <div class="card-body">
-      <h2 class="h3 card-title">{{ .name }}</h2>
+      {{ with $page }}
+      <h2 class="h3 card-title">{{ .Title }}</h2>
       <div class="card-text">
-        {{ with $page }}
           {{ .Content }}
-        {{ end }}
       </div>
+      {{ end }}
     </div>
   </aside>
 {{ end }}
