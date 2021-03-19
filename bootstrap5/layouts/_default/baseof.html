@@ -32,9 +32,9 @@
         {{ partial "func/hook" "content-start" }}
         {{ block "main" . }}{{ end }}
         {{ partial "func/hook" "content-end" }}
-        {{ if in (string site.BaseURL) "localhost" }}
-          {{ partial "seo.html" . }}
-        {{ end }}
+{{/*        {{ if in (string site.BaseURL) "localhost" }}*/}}
+{{/*          {{ partial "seo.html" . }}*/}}
+{{/*        {{ end }}*/}}
       </div>
       {{ if eq (.Scratch.Get "hasSidebar") true }}
         {{ partial "sidebar" . }}
