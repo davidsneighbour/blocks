@@ -1,8 +1,8 @@
-# DNB Blocks Bootstrap 5
+## DNB Blocks Bootstrap
 
-This is a Hugo theme component with helpers to create and add favicons to your website.
+This is a Hugo theme component with blocks to create a website based on Bootstrap 5.
 
-## Installing
+### Installation
 
 Enable modules in your own repository and add this module to your required modules in config.toml:
 
@@ -15,17 +15,17 @@ Then add the module to your configuration:
 ```toml
 [module]
 [[module.imports]]
-path = "github.com/dnb-hugo/blocks/bootstrap5"
+path = "github.com/dnb-hugo/blocks/bootstrap"
 ```
 
 The next time you run hugo it will download the latest version of the module.
 
-## Updating
+### Update
 
 To update this module:
 
 ```shell
-hugo mod get -u github.com/dnb-hugo/components/robots
+hugo mod get -u github.com/dnb-hugo/blocks/bootstrap
 ```
 
 To update all modules:
