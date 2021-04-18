@@ -1,0 +1,16 @@
+{{ with site.Author }}
+  {{ $page := site.GetPage .content }}
+  {{ $photo := $page.Resources.GetMatch .photo.name }}
+  <aside class="card mb-3" id="widget-author">
+    <img src="{{ $photo.Permalink }}"
+         loading="lazy" alt="{{ .photo.title | safeHTML }}" width="{{ $photo.Width }}" height="{{ $photo.Height }}" class="card-img-top">
+    <div class="card-body">
+      {{ with $page }}
+      <h2 class="h3 card-title">{{ .Title }}</h2>
+      <div class="card-text">
+          {{ .Content }}
+      </div>
+      {{ end }}
+    </div>
+  </aside>
+{{ end }}

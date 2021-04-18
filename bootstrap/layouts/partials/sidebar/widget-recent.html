@@ -1,0 +1,17 @@
+<aside class="card mb-3" id="widget-recent">
+  <h3 class="card-header">
+    {{ i18n "recent_entries_sidebar" | safeHTML }}
+  </h3>
+  {{ $pages := where site.RegularPages ".File.UniqueID" "!=" "nil" }}
+  {{ $currentPage := . }}
+  {{ $recentPages := $pages | complement (slice $currentPage) }}
+  <ul class="list-group list-group-flush">
+    {{ range first ($.Param "dnb.sidebar.recent.limit") $recentPages }}
+      <li class="list-group-item">
+        <a href="{{ .Permalink }}" class="stretched-link">
+          {{ .Title }}
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+</aside>

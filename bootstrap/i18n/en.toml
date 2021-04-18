@@ -1,0 +1,75 @@
+# DNB Hugo / Garuda / English template strings
+[related_title]
+other = "Related posts"
+
+[tags_title]
+other = "Tags"
+
+[copyrightbyline]
+other = "Created with <a href=\"http://gohugo.io/\">Hugo {{ . }}</a>."
+
+[pagination_title]
+other = "Pagination"
+
+[entries_from]
+other = "Posts from {{ . }}"
+
+[all_years]
+other = "All years"
+
+[header_notes_tagged_with]
+other = "Entries tagged with {{ . }}"
+
+[archive_sidebar]
+other = "Archive"
+
+[recent_entries_sidebar]
+other = "Recent Posts"
+
+[month_long_1]
+other = "January"
+
+[month_long_2]
+other = "February"
+
+[month_long_3]
+other = "March"
+
+[month_long_4]
+other = "April"
+
+[month_long_5]
+other = "May"
+
+[month_long_6]
+other = "June"
+
+[month_long_7]
+other = "July"
+
+[month_long_8]
+other = "August"
+
+[month_long_9]
+other = "September"
+
+[month_long_10]
+other = "October"
+
+[month_long_11]
+other = "November"
+
+[month_long_12]
+other = "December"
+
+[not_found_title]
+other = "Page not found!"
+
+[not_found_description]
+other = "The requested page was not found."
+
+[search_title]
+other = "Search"
+
+[written_by]
+other = "By"

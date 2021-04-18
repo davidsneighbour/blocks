@@ -1,0 +1,26 @@
+{{- partial "head/metadata.html" . -}}
+{{- with partialCached "func/getStylesheet.html" . $.Lang -}}
+<link rel="stylesheet"
+  href="{{ .Permalink }}"
+  media="print"
+  onload="this.media='all'; this.onload=null;"
+  integrity="{{ .Data.Integrity | html }}">
+<noscript>
+  <link
+    rel="stylesheet"
+    media="all"
+    href="{{ .Permalink }}"
+    integrity="{{ .Data.Integrity | html }}">
+</noscript>
+{{- end -}}
+
+<!-- web monetization tag -->
+{{ with site.Data.dnb.blocks.bootstrap5.config.monetization_url }}
+  <meta name="monetization" content="{{ . }}">
+{{ end }}
+
+<!-- webmanifest partial (if it exists) -->
+{{- $partialPath := "head/pwa.html" -}}
+{{- if templates.Exists (printf "partials/%s" $partialPath) -}}
+  {{- partialCached $partialPath . -}}
+{{- end -}}

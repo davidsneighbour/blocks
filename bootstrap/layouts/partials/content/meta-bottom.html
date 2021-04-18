@@ -1,0 +1,32 @@
+{{ with .Params.hideMeta }}
+{{ else }}
+  <footer>
+    <div class="meta">
+      <div class="row">
+        <div class="col">
+          <span class="icon" aria-hidden="true">
+            {{ partialCached "icons/pencil-alt.svg" . $.Lang }}
+          </span>&nbsp;
+          {{ i18n "written_by" }}&nbsp;
+          <address class="vcard author post-author">
+            <span class="fn">
+              {{- with $.Param "author.name" -}}
+                {{- with $.Param "author.homepage" -}}
+                  <a href="{{ $.Param "author.homepage" }}" rel="author external">
+                {{- end -}}
+                  {{ $.Param "author.name" }}
+                {{- with $.Param "author.homepage" -}}
+                  </a>
+                {{- end -}}
+              {{- else -}}
+                <a href="{{ .Site.Author.homepage }}" rel="author external">
+                  {{ .Site.Author.name }}
+                </a>
+              {{- end -}}
+            </span>
+          </address>
+        </div>
+      </div>
+    </div>
+  </footer>
+{{ end }}

@@ -1,0 +1,6 @@
+<div class="text entry-content">
+  {{ with .Params.featured_image }}
+    <img src="{{ . | absURL }}" />
+  {{ end }}
+  {{ .Content }}
+</div>

@@ -1,0 +1,12 @@
+{{ with site.Author }}
+<aside class="card mb-3" id="widget-author">
+  <img src="{{ .photo.url }}"
+       loading="lazy" style="width:100%;height:auto;" alt="{{ .photo.title | safeHTML }}" width="350" class="card-img-top">
+  <div class="card-body">
+    <h3 class="card-title">{{ .name }}</h3>
+    <div class="card-text">
+      {{ .description }}
+    </div>
+  </div>
+</aside>
+{{ end }}

@@ -1,0 +1,8 @@
+{{ with ($.Param "dnb.sidebar.radio.spotify_playlist") }}
+<aside class="card mb-3" id="widget-radio">
+  <h3 class="card-header">
+    {{ printf "Mood Radio" | safeHTML }}
+  </h3>
+  <iframe src="{{ . }}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+</aside>
+{{ end }}

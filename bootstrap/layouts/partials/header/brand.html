@@ -1,0 +1,16 @@
+<div id="topheader" class="container">
+  <header class="row">
+    <div class="col-12">
+      <div class="h1">
+        <a href="{{ site.BaseURL }}" class="blogname" rel="home">
+          {{- site.Title -}}
+        </a>
+        {{- with site.Params.Description -}}
+          <span class="blogdescription">
+            {{- . -}}
+          </span>
+        {{- end -}}
+      </div>
+    </div>
+  </header>
+</div>
