@@ -16,7 +16,7 @@
     "@commitlint/config-conventional": "12.1.1",
     "@dnb-hugo/browserslist-config": "2.2.0",
     "@dnb-hugo/commitlint-config": "2.0.9",
-    "@dnb-hugo/eslint-config": "2.0.5",
+    "@dnb-hugo/eslint-config": "2.0.8",
     "@dnb-hugo/remark-config": "2.0.3",
     "@dnb-hugo/standard-version-config": "2.0.2",
     "@dnb-hugo/stylelint-config": "2.0.14",
