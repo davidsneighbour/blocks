@@ -1,15 +1,61 @@
-{{ partialCached "footer/copyright.html" . $.Lang }}
-{{ partial "footer/debugging.html" . }}
-{{ partialCached "footer/finisher.html" . $.Lang }}
+<section id="footer">
+  <footer>
+    <section class="is--footer">
+      <aside>
+        <div class="h3">Official Hugo Resources</div>
+        <ul>
+          {{ range .Site.Menus.official }}
+            <li><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </aside>
+      <aside>
+        <div class="h3">Hugo Repositories</div>
+        <ul>
+          {{ range .Site.Menus.github }}
+            <li>{{ partialCached "bsicon" "github" "github" }}&nbsp;&nbsp;<a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </aside>
+      <aside>
+        <ul class="social-icons ">
+          <li>
+            <a href="https://twitter.com/hugonewsletter" aria-label="Follow @hugonewsletter on Twitter">
+              {{ partialCached "bsicon" "twitter" "twitter" }}
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/dnb-hugo/hugonewsletter.com/" aria-label="Check out hugonewsletter.com on GitHub.com">
+              {{ partialCached "bsicon" "github" "github" }}
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </section>
+  </footer>
+  <footer>
+    <section class="is--footer text-center">
+      <div class="h3 text-center"><pre><code>@dnb-hugo</code> Configurations</pre></div>
+      <ul class="list-inline text-center">
+        {{ range .Site.Menus.configurations }}
+          <li class="list-inline-item"><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </section>
+  </footer>
+  {{ partialCached "footer/copyright.html" . $.Lang }}
+</section>
 
 {{/* internal javascript integration */}}
 {{ with partialCached "func/getJavascript.html" . $.Lang }}
-<script
-  src="{{.RelPermalink}}" integrity="{{ .Data.Integrity | html }}"
-  crossorigin="anonymous" async defer
-  type="text/javascript"></script>
+  <script
+          src="{{.RelPermalink}}" integrity="{{ .Data.Integrity | html }}"
+          crossorigin="anonymous" async defer
+          type="text/javascript"></script>
 {{ end }}
 {{ partialCached "func/getJavascriptByBuild" . $.Lang }}
 
 {{/* service worker integration via dnb-hugo/components/pwa */}}
-{{ partial "footer/service-worker" . }}
+{{- partialCached "footer/service-worker.html" . -}}
+{{- partial "footer/debugging.html" . -}}
+{{- partialCached "hooks/footer-end-cached" . -}}

@@ -24,3 +24,10 @@
 {{- if templates.Exists (printf "partials/%s" $partialPath) -}}
   {{- partialCached $partialPath . -}}
 {{- end -}}
+
+{{ partial "head/social" . }}
+{{ block "schema" . }}{{ end }}
+{{ partial "head/opensearch" . }}
+
+
+

@@ -1,9 +1,26 @@
 {{ if eq (.Scratch.Get "hasSidebar") true }}
-    <section id="sidebar" class="col-lg-4 col-sm-12 col">
-        {{ partial "func/hook" "sidebar-start" }}
-        {{ range $.Param "dnb.sidebar.items" }}
-            {{ partialCached ( printf "sidebar/widget-%s.html" . ) $.Page $.Lang }}
-        {{ end }}
-        {{ partial "func/hook" "sidebar-end" }}
-    </section>
+  <section id="sidebar-1">
+    {{- partial "func/hook" ( dict "hook" "sidebar-start" "context" . ) -}}
+
+    {{ range $.Param "dnb.sidebar.items" }}
+      {{ partialCached ( printf "sidebar/widget-%s.html" . ) $.Page $.Lang }}
+    {{ end }}
+
+    {{ range site.Params.mainSections }}
+      {{ $section := site.GetPage "section" . }}
+      {{ $posts := where site.RegularPages "Section" . }}
+      {{ with $posts }}
+        <div class="h3"><a href="{{ $section.Permalink }}" class="text-dark">{{ $section.Title }}</a></div>
+        <ul>
+          {{ range . }}
+            <li class=" text-truncate" title="{{ .LinkTitle }}">
+              <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    {{ end }}
+
+    {{- partial "func/hook" ( dict "hook" "sidebar-end" "context" . ) -}}
+  </section>
 {{ end }}

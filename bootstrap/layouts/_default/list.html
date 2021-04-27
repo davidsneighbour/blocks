@@ -1,0 +1,30 @@
+{{ define "main" }}
+  <header>
+    <h1>{{.Title}}</h1>
+  </header>
+  {{.Content}}
+  {{ range .Pages }}
+    <div class="card border-secondary mb-3">
+      <div class="card-header bg-transparent d-flex justify-content-between">
+        <h5 class="mb-0">
+          <a href="{{.Permalink}}">{{ .Title }}</a>
+        </h5>
+        <span class="badge bg-light text-dark">{{.Date.Format "2006-01-02"}}</span>
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{ .Description }}</p>
+      </div>
+      <div class="card-footer bg-transparent">
+        <div class="text-start">
+          {{ range .Keywords }}
+            <span class="badge bg-info">{{ . | upper }}</span>
+          {{ end }}
+        </div>
+
+        <div class="text-end">
+          <a href="{{.Permalink}}" class="btn btn-outline-primary btn-sm stretched-link">Read on...</a>
+        </div>
+      </div>
+    </div>
+  {{ end }}
+{{ end }}

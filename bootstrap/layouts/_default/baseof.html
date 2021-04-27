@@ -1,46 +1,57 @@
-{{- partial "func/hook" "buildup" -}}<!doctype html>{{- $config := .Scratch.Get "config" -}}
-{{ $contentColumnClasses := "col" }}
-{{ .Scratch.Set "hasSidebar" false }}
-{{ if (and (isset ($.Param "dnb.sidebar") "enabled") (eq ($.Param "dnb.sidebar.enabled") true )) }}
-  {{ .Scratch.Set "hasSidebar" true }}
-  {{ $contentColumnClasses := "col-lg-8 col-sm-12 col" }}
-{{ end }}
-{{ .Scratch.Set "enableTemplateWarnings" true }}
-{{ if (and (isset ($.Param "dnb") "enableTemplateWarnings") (eq ($.Param "dnb.enableTemplateWarnings") false )) }}
-  {{ .Scratch.Set "enableTemplateWarnings" false }}
-{{ end }}
-<html lang="{{ .Site.Language.Lang }}" class="no-js">
-{{ partial "func/hook" "setup" }}
-<head>
-  <meta charset="{{ $config.charset | default "utf-8" }}">
-  <meta name="viewport" content="{{ $config.viewport | default "width=device-width, initial-scale=1, shrink-to-fit=no" }}">
-  <title>{{ block "title" . }}{{- with .Title }}{{ . }} | {{ end }}{{ .Site.Title -}}{{ end }}</title>
-  {{ partial "func/hook" "head-start" }}
-  {{ partial "head" . }}
-  {{ partial "head/social" . }}
-  {{ block "schema" . }}{{ end }}
-  {{ partial "head/opensearch" . }}
-  {{ partial "func/hook" "head-end" }}
-</head>
-<body id="{{ .Site.Params.Siteslug | default "garuda-garuda" }}">
-  {{ partial "func/hook" "body-start" }}
+{{- if eq true (site.Params.build | default true) -}}
+  {{- $config := index site.Data.dnb "blocks-bootstrap" "config" -}}
+  {{- .Scratch.Set "hasSidebar" false -}}
+  {{- if (and
+          (isset $config "layout")
+          (isset $config.layout "sidebar_enabled")
+          (eq $config.layout.sidebar_enabled true)
+    ) -}}
+    {{- .Scratch.Set "hasSidebar" true -}}
+  {{- end -}}
+  {{- .Scratch.Set "enableTemplateWarnings" true -}}
+  {{- if (and (isset ($.Param "dnb") "enableTemplateWarnings") (eq ($.Param "dnb.enableTemplateWarnings") false )) -}}
+    {{- .Scratch.Set "enableTemplateWarnings" false -}}
+  {{- end -}}
+  {{- partial "func/hook" ( dict "hook" "setup" "context" . ) -}}
+  <!doctype html>
+  <html lang="{{ site.LanguageCode | default "en-US" }}" class="no-js">
+  <head>
+    <meta charset="{{ $config.head.charset | default "utf-8" }}">
+    <meta name="viewport" content="{{ $config.head.viewport | default "width=device-width, initial-scale=1, shrink-to-fit=no" }}">
+    <title>{{ block "title" . }}{{- with .Title }}{{ . }} | {{ end }}{{ .Site.Title -}}{{ end }}</title>
+    {{- partial "func/hook" ( dict "hook" "head-start" "context" . ) -}}
+    {{- partial "head" . -}}
+    {{ partial "head/social" . }}
+    {{ block "schema" . }}{{ end }}
+    {{ partial "head/opensearch" . }}
+    {{- $critical := resources.Get "critical.css" -}}
+    <style>{{- $critical.Content | safeCSS -}}</style>
+    <meta name="description" content="{{- with .Params.Description -}}{{ . }}{{- else -}}{{- with site.Data.dnb.hugonewsletter.config.general.description -}}{{- . -}}{{- end -}}{{- end -}}">
+    {{- partialCached "head/statics" . -}}
+    {{- partialCached "head/pwa" . -}}
+    {{- partial "func/hook" ( dict "hook" "head-end" "context" . ) -}}
+  </head>
+
+  <body id="{{ .Site.Params.Siteslug | default "bootstrap" }}">
+  {{- partial "func/hook" ( dict "hook" "body-start" "context" . ) -}}
   {{ partial "header" . }}
-  {{ partial "func/hook" "container-start" }}
-  <main id="content" class="container">
+  {{- partial "func/hook" ( dict "hook" "container-start" "context" . ) -}}
+  <main id="content">
     <div class="row">
-      <div id="maincolumn" class="{{ $contentColumnClasses }}">
-        {{ partial "func/hook" "content-start" }}
+      <div id="main">
+        {{- partial "func/hook" ( dict "hook" "content-start" "context" . ) -}}
         {{ block "main" . }}{{ end }}
-        {{ partial "func/hook" "content-end" }}
+        {{- partial "func/hook" ( dict "hook" "content-end" "context" . ) -}}
       </div>
       {{ if eq (.Scratch.Get "hasSidebar") true }}
         {{ partial "sidebar" . }}
       {{ end }}
     </div>
   </main>
-  {{ partial "func/hook" "container-end" }}
-  {{ partial "footer" . }}
-  {{ partial "func/hook" "body-end" }}
-</body>
-</html>
-{{ partial "func/hook" "teardown" }}
+  {{- partial "func/hook" ( dict "hook" "container-end" "context" . ) -}}
+  {{- partial "footer" . -}}
+  {{- partial "func/hook" ( dict "hook" "body-end" "context" . ) -}}
+  </body>
+  </html>
+  {{- partial "func/hook" ( dict "hook" "teardown" "context" . ) -}}
+{{ end }}

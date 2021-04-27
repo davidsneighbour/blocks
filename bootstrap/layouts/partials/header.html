@@ -1,2 +1,33 @@
-{{ partialCached "header/brand.html" . $.Lang }}
-{{ partial "header/navigation.html" . }}
+<div id="header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class=" container-lg">
+      <a href="/" class="navbar-brand me-auto">
+        <img src="/images/logos/hugo-logo-wordmark.svg" alt="{{ site.Title }}">
+      </a>
+      <div class="is--topnavigation">
+        <button
+                class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-nav">
+            {{ $currentPage := . }}
+            <a href="{{ .Site.BaseURL | relLangURL }}" class="nav-link">{{ .Site.Params.Home }}</a>
+            {{ range site.Menus.main }}
+              <a
+                      href="{{ .URL }}"
+                      {{- if eq .Page nil }} target="_blank" rel="noopener noreferrer" {{ end -}}
+                      class="nav-link{{ if or (eq $currentPage.Section .Identifier) ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) (and (eq $currentPage.Type "posts") (eq .Identifier "archive" )) (and (eq $currentPage.Kind "taxonomy") (eq .Identifier "archive" )) }} active{{ end }}">
+                {{ with .Pre }}
+                  <span class="icon larger light" aria-hidden="true">{{ partialCached (print .) . $.Lang }}</span>&nbsp;
+                {{ end }}
+                {{ .Name }}
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
