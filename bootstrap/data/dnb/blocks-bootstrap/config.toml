@@ -1,6 +1,18 @@
-# see https://webmonetization.org/docs/getting-started/
-monetization_url = ""
+[config]
 
-# meta tags
+[head]
 viewport = "width=device-width, initial-scale=1, shrink-to-fit=no"
 charset = "utf-8"
+
+[header]
+
+[layout]
+sidebar_enabled = true
+
+[footer]
+
+[plugins]
+
+[plugins.head]
+# see https://webmonetization.org/docs/getting-started/
+monetization_url = ""
