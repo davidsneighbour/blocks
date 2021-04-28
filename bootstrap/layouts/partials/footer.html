@@ -18,7 +18,7 @@
         </ul>
       </aside>
       <aside>
-        <ul class="social-icons ">
+        <ul class="social-icons">
           <li>
             <a href="https://twitter.com/hugonewsletter" aria-label="Follow @hugonewsletter on Twitter">
               {{ partialCached "bsicon" "twitter" "twitter" }}
@@ -35,7 +35,7 @@
   </footer>
   <footer>
     <section class="is--footer text-center">
-      <div class="h3 text-center"><pre><code>@dnb-hugo</code> Configurations</pre></div>
+      <div class="h3 text-center">@dnb-hugo Configurations</div>
       <ul class="list-inline text-center">
         {{ range .Site.Menus.configurations }}
           <li class="list-inline-item"><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
@@ -44,14 +44,15 @@
     </section>
   </footer>
   {{ partialCached "footer/copyright.html" . $.Lang }}
+  {{ partialCached "footer/debugging.html" . $.Lang }}
 </section>
 
 {{/* internal javascript integration */}}
 {{ with partialCached "func/getJavascript.html" . $.Lang }}
   <script
-          src="{{.RelPermalink}}" integrity="{{ .Data.Integrity | html }}"
-          crossorigin="anonymous" async defer
-          type="text/javascript"></script>
+    src="{{.RelPermalink}}" integrity="{{ .Data.Integrity | html }}"
+    crossorigin="anonymous" async defer
+    type="text/javascript"></script>
 {{ end }}
 {{ partialCached "func/getJavascriptByBuild" . $.Lang }}
 

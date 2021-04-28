@@ -1,28 +1,29 @@
-<footer id="copyright">
+<footer id="copyright" class="container-lg">
   <section class="is--copyright">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-		    <div class="textwidget text-center mt-5 mb-5">
-          <ul class="list-inline mb-0">
-            {{ range .Site.Menus.footer }}
-              <li class="list-inline-item">
-                <a href="{{.URL}}">
-                  {{ .Name }}
-                </a>
-              </li>
-            {{ end }}
-          </ul>
-          <p class="text-center">
-            <span class="copy">&copy; {{ with $.Param "dnb.copy-from" }}{{ . }}-{{ end }}{{ now.Format "2006" }}</span>&nbsp;<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> |
-            {{ i18n "copyrightbyline" hugo.Version | safeHTML }}
-          </p>
-          <a href="{{ .Site.BaseURL | relLangURL }}">
-            <img src="/images/logos/logo.png" alt="{{ .Site.Title }}" width="200" height="206">
-          </a>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="textwidget text-center mt-5 mb-5">
+            <ul class="list-inline mb-0">
+              {{ range .Site.Menus.footer }}
+                <li class="list-inline-item">
+                  <a href="{{.URL}}">
+                    {{ .Name }}
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+            <p class="text-center">
+              <span class="copy">&copy; {{ with $.Param "dnb.copy-from" }}{{ . }}-{{ end }}{{ now.Format "2006" }}</span>&nbsp;<a
+                      href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> |
+              {{ i18n "copyrightbyline" hugo.Version | safeHTML }}
+            </p>
+            <a href="{{ .Site.BaseURL | relLangURL }}">
+              <img src="/images/logos/logo.png" alt="{{ .Site.Title }}" width="200" height="206">
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </section>
 </footer>
