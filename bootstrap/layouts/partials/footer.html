@@ -2,45 +2,19 @@
   <footer>
     <section class="is--footer">
       <aside>
-        <div class="h3">Official Hugo Resources</div>
-        <ul>
-          {{ range .Site.Menus.official }}
-            <li><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
-          {{ end }}
-        </ul>
+        {{ partial "navigation" (dict "menu" "official" "title" "Official Hugo Resources") }}
       </aside>
       <aside>
-        <div class="h3">Hugo Repositories</div>
-        <ul>
-          {{ range .Site.Menus.github }}
-            <li>{{ partialCached "bsicon" "github" "github" }}&nbsp;&nbsp;<a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
-          {{ end }}
-        </ul>
+        {{ partial "navigation" (dict "menu" "github" "title" "Hugo Repositories") }}
       </aside>
       <aside>
-        <ul class="social-icons">
-          <li>
-            <a href="https://twitter.com/hugonewsletter" aria-label="Follow @hugonewsletter on Twitter">
-              {{ partialCached "bsicon" "twitter" "twitter" }}
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/dnb-hugo/hugonewsletter.com/" aria-label="Check out hugonewsletter.com on GitHub.com">
-              {{ partialCached "bsicon" "github" "github" }}
-            </a>
-          </li>
-        </ul>
+        {{ partial "navigation" (dict "menu" "social" "icononly" true "class" "social-icons") }}
       </aside>
     </section>
   </footer>
   <footer>
     <section class="is--footer text-center">
-      <div class="h3 text-center">@dnb-hugo Configurations</div>
-      <ul class="list-inline text-center">
-        {{ range .Site.Menus.configurations }}
-          <li class="list-inline-item"><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
-        {{ end }}
-      </ul>
+      {{ partial "navigation" (dict "menu" "configurations" "title" "@dnb-hugo Configurations" "class" "list-inline" "classitem" "list-inline-item") }}
     </section>
   </footer>
   {{ partialCached "footer/copyright.html" . $.Lang }}
