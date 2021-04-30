@@ -13,8 +13,10 @@
     </section>
   </footer>
   <footer>
-    <section class="is--footer text-center">
-      {{ partial "navigation" (dict "menu" "configurations" "title" "@dnb-hugo Configurations" "class" "list-inline" "classitem" "list-inline-item") }}
+    <section class="is--footer">
+      <aside>
+        {{ partial "navigation" (dict "menu" "configurations" "title" "@dnb-hugo Configurations" "class" "list-inline" "classitem" "list-inline-item") }}
+      </aside>
     </section>
   </footer>
   {{ partialCached "footer/copyright.html" . $.Lang }}
