@@ -1,24 +1,29 @@
 <section id="footer">
-  <footer>
-    <section class="is--footer">
-      <aside>
-        {{ partial "navigation" (dict "menu" "official" "title" "Official Hugo Resources") }}
-      </aside>
-      <aside>
-        {{ partial "navigation" (dict "menu" "github" "title" "Hugo Repositories") }}
-      </aside>
-      <aside>
-        {{ partial "navigation" (dict "menu" "social" "icononly" true "class" "social-icons") }}
-      </aside>
-    </section>
-  </footer>
-  <footer>
-    <section class="is--footer">
-      <aside>
-        {{ partial "navigation" (dict "menu" "configurations" "title" "@dnb-hugo Configurations" "class" "list-inline" "classitem" "list-inline-item") }}
-      </aside>
-    </section>
-  </footer>
+
+  {{ $config := index site.Data.dnb "blocks-bootstrap" "config" }}
+  {{ $footerItems := $config.footer.rows }}
+  {{ range $footerItems }}
+    <footer>
+      <section class="is--footer">
+        {{ range .item }}
+          <aside>
+            {{ if eq .type "navigation" }}
+              {{ $configuration := dict }}
+              {{ $configuration = merge $configuration (dict "menu" .name) }}
+              {{ $configuration = merge $configuration (dict "title" (.title | default "")) }}
+              {{ $configuration = merge $configuration (dict "icononly" (.icononly | default false)) }}
+              {{ $configuration = merge $configuration (dict "class" (.class | default "")) }}
+              {{ $configuration = merge $configuration (dict "classitem" (.classitem | default "")) }}
+              {{ partial "navigation" $configuration }}
+            {{ else }}
+              {{ .bla }}
+            {{ end }}
+          </aside>
+        {{ end }}
+      </section>
+    </footer>
+  {{ end }}
+
   {{ partialCached "footer/copyright.html" . $.Lang }}
 </section>
 
