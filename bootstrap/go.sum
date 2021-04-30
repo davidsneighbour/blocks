@@ -1,9 +1,9 @@
 github.com/dnb-hugo/components/functions v1.0.24 h1:yArKJ0Wj3TmhyqhOsGDGDZ0WtOnnfOGxdKk/gOpa8E4=
 github.com/dnb-hugo/components/functions v1.0.24/go.mod h1:64TRuURsUFIlUqAOEgwGQmrjLbv6XOxGnl9cpBAdvg0=
-github.com/dnb-hugo/components/pwa v1.1.9 h1:FmSnm/jvidCdA54jNwZ0NbrVmnxnb9865dLNhS+7C6Y=
-github.com/dnb-hugo/components/pwa v1.1.9/go.mod h1:CFQcXPctmx31TAC9TEEUVeJ73kZfPQ8vlFpnvuGIuOM=
-github.com/dnb-hugo/components/social v0.0.5 h1:/VG2tm4y596RGnOOP28unRvh89jf28I48L9Jvq8gj4o=
-github.com/dnb-hugo/components/social v0.0.5/go.mod h1:ddMwargXmdMt1fAhfSKdJAGuUUBFUD3Qb9yzgojDjas=
+github.com/dnb-hugo/components/pwa v1.1.10 h1:YtcGoJVKshhUNrRBIf3a9ovp0AkF5I0fRj9NX6kTmqk=
+github.com/dnb-hugo/components/pwa v1.1.10/go.mod h1:CFQcXPctmx31TAC9TEEUVeJ73kZfPQ8vlFpnvuGIuOM=
+github.com/dnb-hugo/components/social v0.0.6 h1:/Slej7Ogv6+r07DW7J0ZhXDg8rpNkJ4XY1boOMa7cqg=
+github.com/dnb-hugo/components/social v0.0.6/go.mod h1:ddMwargXmdMt1fAhfSKdJAGuUUBFUD3Qb9yzgojDjas=
 github.com/dnb-hugo/debugprint v1.0.8 h1:B9AuWqc4qggkmyQuEdtB2sN7eLTB0IeP96r+EUCBUrc=
 github.com/dnb-hugo/debugprint v1.0.8/go.mod h1:YMvTiP34ADcKHOtCpjeIuzfDyXrh0mSKvfjVt/WXpLM=
 github.com/dnb-hugo/hooks v1.0.2 h1:8mROGshDbgtEznojkpJGQEXTVYMNvpSe4L9huxSp39E=
