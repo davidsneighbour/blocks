@@ -1,3 +1,0 @@
-{{ with site.GetPage (printf "/tags/%s" .) -}}
-  <a href="{{ .RelPermalink }}"  title='All pages tagged with "{{ .Title }}"' rel="tag">{{ .Title }}</a>
-{{- end }}

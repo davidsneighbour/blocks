@@ -1,22 +1,26 @@
+{{ $config := index site.Data.dnb "blocks-bootstrap" "config" }}
+
 <div id="header">
   <nav>
     <div>
       <a href="/">
-        <img src="/images/logos/hugo-logo-wordmark.svg" alt="{{ site.Title }}">
+        <img src="{{ $config.header.logo.src }}" alt="{{ site.Title }}" width="{{ $config.header.logo.width }}px"
+             height="{{ $config.header.logo.height }}px">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topnavigation" aria-controls="topnavigation" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topnavigation"
+              aria-controls="topnavigation" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div id="topnavigation">
         <div>
           {{ $currentPage := . }}
-          <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Home }}</a>
-          {{ range site.Menus.main }}
-            <a
-                    href="{{ .URL }}"
+          <a href="{{ site.BaseURL | relLangURL }}">{{ site.Params.Home }}</a>
+          {{ $menu := index site.Menus ($config.header.menu | default "main") }}
+          {{ range $menu }}
+            <a href="{{ .URL }}"
                     {{- if eq .Page nil }} target="_blank" rel="noopener noreferrer" {{ end -}}
-                    {{ if or (eq $currentPage.Section .Identifier) ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) (and (eq $currentPage.Type "posts") (eq .Identifier "archive" )) (and (eq $currentPage.Kind "taxonomy") (eq .Identifier "archive" )) }}
-                    class="active"
+                    {{ if or (eq $currentPage.Section .Identifier) ($currentPage.IsMenuCurrent $config.header.menu .) ($currentPage.HasMenuCurrent $config.header.menu .) (and (eq $currentPage.Type "posts") (eq .Identifier "archive" )) (and (eq $currentPage.Kind "taxonomy") (eq .Identifier "archive" )) }}
+                      class="active"
                     {{ end }}
             >
               {{ with .Pre }}

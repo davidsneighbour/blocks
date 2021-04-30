@@ -14,38 +14,38 @@
   {{- end -}}
   {{- partial "func/hook" ( dict "hook" "setup" "context" . ) -}}
   <!doctype html>
-  <html lang="{{ site.LanguageCode | default "en-US" }}" class="no-js">
+  <html lang="{{- site.LanguageCode | default "en-US" -}}" class="no-js">
   <head>
-    <meta charset="{{ $config.head.charset | default "utf-8" }}">
-    <meta name="viewport" content="{{ $config.head.viewport | default "width=device-width, initial-scale=1, shrink-to-fit=no" }}">
-    <title>{{ block "title" . }}{{- with .Title }}{{ . }} | {{ end }}{{ .Site.Title -}}{{ end }}</title>
+    <meta charset="{{- $config.head.charset | default "utf-8" -}}">
+    <meta name="viewport" content="{{- $config.head.viewport | default "width=device-width, initial-scale=1, shrink-to-fit=no" -}}">
+    <title>{{- block "title" . -}}{{- with .Title -}}{{- . -}} | {{- end -}}{{- .Site.Title -}}{{- end -}}</title>
     {{- partial "func/hook" ( dict "hook" "head-start" "context" . ) -}}
     {{- partial "head" . -}}
-    {{ partial "head/social" . }}
-    {{ block "schema" . }}{{ end }}
-    {{ partial "head/opensearch" . }}
+    {{- partial "head/social" . -}}
+    {{- block "schema" . -}}{{- end -}}
+    {{- partial "head/opensearch" . -}}
     {{- $critical := resources.Get "critical.css" -}}
     <style>{{- $critical.Content | safeCSS -}}</style>
-    <meta name="description" content="{{- with .Params.Description -}}{{ . }}{{- else -}}{{- with site.Data.dnb.hugonewsletter.config.general.description -}}{{- . -}}{{- end -}}{{- end -}}">
+    <meta name="description" content="{{- with .Params.Description -}}{{- . -}}{{- else -}}{{- with site.Data.dnb.hugonewsletter.config.general.description -}}{{- . -}}{{- end -}}{{- end -}}">
     {{- partialCached "head/statics" . -}}
     {{- partialCached "head/pwa" . -}}
     {{- partial "func/hook" ( dict "hook" "head-end" "context" . ) -}}
   </head>
 
-  <body id="{{ .Site.Params.Siteslug | default "bootstrap" }}">
+  <body id="{{- .Site.Params.Siteslug | default "bootstrap" -}}">
   {{- partial "func/hook" ( dict "hook" "body-start" "context" . ) -}}
-  {{ partial "header" . }}
+  {{- partial "header" . -}}
   {{- partial "func/hook" ( dict "hook" "container-start" "context" . ) -}}
   <main id="content">
     <div class="row">
       <div id="main">
         {{- partial "func/hook" ( dict "hook" "content-start" "context" . ) -}}
-        {{ block "main" . }}{{ end }}
+        {{- block "main" . -}}{{- end -}}
         {{- partial "func/hook" ( dict "hook" "content-end" "context" . ) -}}
       </div>
-      {{ if eq (.Scratch.Get "hasSidebar") true }}
-        {{ partial "sidebar" . }}
-      {{ end }}
+      {{- if eq (.Scratch.Get "hasSidebar") true -}}
+        {{- partial "sidebar" . -}}
+      {{- end -}}
     </div>
   </main>
   {{- partial "func/hook" ( dict "hook" "container-end" "context" . ) -}}
@@ -54,4 +54,4 @@
   </body>
   </html>
   {{- partial "func/hook" ( dict "hook" "teardown" "context" . ) -}}
-{{ end }}
+{{- end -}}
