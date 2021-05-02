@@ -25,7 +25,7 @@
     {{- block "schema" . -}}{{- end -}}
     {{- partial "head/opensearch" . -}}
     {{- $critical := resources.Get "critical.css" -}}
-    <style>{{- $critical.Content | safeCSS -}}</style>
+    <style>{{ $critical.Content | safeCSS }}</style>
     <meta name="description" content="{{- with .Params.Description -}}{{- . -}}{{- else -}}{{- with site.Data.dnb.hugonewsletter.config.general.description -}}{{- . -}}{{- end -}}{{- end -}}">
     {{- partialCached "head/statics" . -}}
     {{- partialCached "head/pwa" . -}}
