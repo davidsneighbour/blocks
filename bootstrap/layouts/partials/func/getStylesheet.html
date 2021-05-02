@@ -25,7 +25,7 @@
   {{ end }}
 {{ end }}
 
-{{ $collection = $collection | append (resources.Get "scss/theme.scss") | resources.Concat "garuda.scss" }}
+{{ $collection = $collection | append (resources.Get "scss/theme.scss") | resources.Concat "stylesheet.scss" }}
 
 {{ partial "debugprint" $collection }}
 
