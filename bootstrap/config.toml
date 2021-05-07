@@ -27,12 +27,6 @@ ignoreConfig = false
 ignoreImports = false
 
 [[module.imports]]
-path = "github.com/dnb-hugo/components/functions"
-disable = false
-ignoreConfig = false
-ignoreImports = false
-
-[[module.imports]]
 path = "github.com/dnb-hugo/components/pwa"
 disable = false
 ignoreConfig = false
@@ -67,3 +61,52 @@ path = "github.com/dnb-hugo/hooks"
 disable = false
 ignoreConfig = false
 ignoreImports = false
+
+[params]
+[params.dnb]
+[params.dnb.config]
+debug = false
+
+[params.dnb.head]
+viewport = "width=device-width, initial-scale=1, shrink-to-fit=no"
+charset = "utf-8"
+# see https://webmonetization.org/docs/getting-started/
+monetization_url = ""
+
+[params.dnb.header]
+menu="main"
+[params.dnb.header.logo]
+src="/images/logos/hugo-logo-wordmark.svg"
+width=300
+height=40
+
+[params.dnb.layout]
+sidebar_enabled = true
+
+[params.dnb.footer]
+[[params.dnb.footer.rows]]
+[[params.dnb.footer.rows.item]]
+type="navigation"
+name="official"
+title="Official Hugo Resources"
+[[params.dnb.footer.rows.item]]
+type="navigation"
+name="github"
+title="Hugo Repositories"
+[[params.dnb.footer.rows.item]]
+type="navigation"
+name="social"
+icononly=true
+class="social-icons"
+[[params.dnb.footer.rows]]
+[[params.dnb.footer.rows.item]]
+type="navigation"
+name="configurations"
+title="@dnb-hugo Configurations"
+class="list-inline"
+classitem="list-inline-item"
+[params.dnb.footer.copyright]
+logo="/images/logos/logo.png"
+width=200
+height=206
+copyline=""
