@@ -5,9 +5,10 @@ version: 2
 updates:
 
   - package-ecosystem: "npm"
-    directory: "/bootstrap5"
+    directory: "/bootstrap"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      day: "friday"
       time: "18:00"
       timezone: "Asia/Bangkok"
     assignees:
@@ -20,9 +21,10 @@ updates:
       separator: "/"
 
   - package-ecosystem: "npm"
-    directory: "/tailwind"
+    directory: "/bootstrap5"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      day: "friday"
       time: "18:00"
       timezone: "Asia/Bangkok"
     assignees:
