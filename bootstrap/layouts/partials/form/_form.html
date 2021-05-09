@@ -1,0 +1,20 @@
+<form class="is--form" method="{{ .config.formmethod }}" action="{{ .config.formlink }}">
+
+  {{ if eq .config.type "formspree" }}
+    <input type="hidden" name="_subject" value="{{ .config.subject }}">
+    <input type="text" name="_gotcha" class="d-none" />
+  {{ end }}
+
+  <div class="row">
+    {{ range .fields }}
+      <div class="{{ .layout }}">
+        {{ partial (printf "form/%s" .type) . }}
+      </div>
+    {{ end }}
+  </div>
+
+  {{ range .buttons }}
+    {{ partial (printf "form/%s" .type) . }}
+  {{ end }}
+
+</form>

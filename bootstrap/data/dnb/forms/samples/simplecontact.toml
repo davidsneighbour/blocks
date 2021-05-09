@@ -1,0 +1,43 @@
+# a quick simple contact form to see how the form partial works
+
+[config]
+formlink=""
+formmethod="post"
+class=""
+# form field layout
+# 1 for labels above field
+# 2 for inline label
+fieldlayout=1
+# only required for inline labels
+labelclass="col-sm-3 col-" # content is followed by `form-label` for positioning
+fieldclass="col-sm-9"
+
+[[fields]]
+id="name"
+type="text"
+label="Your Name"
+layout="col-md-6"
+placeholder="Your Name"
+value=""
+
+[[fields]]
+id="email"
+type="email"
+label="Your Email Address"
+layout="col-md-6"
+placeholder="Your Email Address"
+value=""
+
+[[fields]]
+id="Comment"
+type="textarea"
+label="Your Message"
+layout="col-md-12"
+placeholder="Your Message…"
+value=""
+rows=12
+
+[[buttons]]
+id="submit"
+type="button"
+label="Send Message"
