@@ -16,23 +16,12 @@
   <!doctype html>
   <html lang="{{- site.LanguageCode | default "en-US" -}}" class="no-js">
   <head>
+    {{- partial "func/hook" ( dict "hook" "head-init" "context" . ) -}}
     <meta charset="{{- $config.head.charset | default "utf-8" -}}">
     <meta name="viewport" content="{{- $config.head.viewport | default "width=device-width, initial-scale=1, shrink-to-fit=no" -}}">
     <title>{{- block "title" . -}}{{- with .Title -}}{{- . -}} | {{- end -}}{{- .Site.Title -}}{{- end -}}</title>
     {{- partial "func/hook" ( dict "hook" "head-start" "context" . ) -}}
     {{- partial "head" . -}}
-    {{- partial "head/social" . -}}
-    {{- block "schema" . -}}{{- end -}}
-    {{- partial "head/opensearch" . -}}
-    {{- $critical := resources.Get "critical.css" -}}
-    {{- with $critical -}}
-    <style>
-      {{- .Content | safeCSS -}}
-    </style>
-    {{- end -}}
-    <meta name="description" content="{{- with .Params.Description -}}{{- . -}}{{- else -}}{{- with site.Data.dnb.hugonewsletter.config.general.description -}}{{- . -}}{{- end -}}{{- end -}}">
-    {{- partialCached "head/statics" . -}}
-    {{- partialCached "head/pwa" . -}}
     {{- partial "func/hook" ( dict "hook" "head-end" "context" . ) -}}
   </head>
 

@@ -1,16 +1,2 @@
 {{ with site.Author.name }}
 <meta name="author" content="{{ . }}">{{ end }}
-{{- with partialCached "func/getStylesheet.html" . $.Lang -}}
-  <link rel="stylesheet"
-        href="{{ .Permalink }}"
-        media="print"
-        onload="this.media='all'; this.onload=null;"
-        integrity="{{ .Data.Integrity | html }}">
-  <noscript>
-    <link rel="stylesheet"
-          media="all"
-          href="{{ .Permalink }}"
-          integrity="{{ .Data.Integrity | html }}">
-  </noscript>
-{{- end -}}
-{{- partialCached "head/pwa" . -}}

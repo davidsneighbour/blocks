@@ -1,4 +1,11 @@
 {{- partial "head/metadata.html" . -}}
+
+{{- $critical := resources.Get "critical.css" -}}
+{{- with $critical -}}
+  <style>
+    {{- .Content | safeCSS -}}
+  </style>
+{{- end -}}
 {{- with partialCached "func/getStylesheet.html" . $.Lang -}}
 <link rel="stylesheet"
   href="{{ .Permalink }}"
@@ -19,12 +26,6 @@
   <meta name="monetization" content="{{ . }}">
 {{ end }}
 
-<!-- webmanifest partial (if it exists) -->
-{{- $partialPath := "head/pwa.html" -}}
-{{- if templates.Exists (printf "partials/%s" $partialPath) -}}
-  {{- partialCached $partialPath . -}}
-{{- end -}}
-
 {{ $partialSocial := "head/social" }}
 {{ if templates.Exists ( printf "partials/%s" $partialSocial ) }}
   {{ partial "head/opensearch" . }}
@@ -35,3 +36,10 @@
   {{ partial "head/opensearch" . }}
 {{ end }}
 
+{{- partialCached "head/statics" . -}}
+
+<!-- webmanifest partial (if it exists) -->
+{{- $partialPath := "head/pwa.html" -}}
+{{- if templates.Exists (printf "partials/%s" $partialPath) -}}
+  {{- partialCached $partialPath . -}}
+{{- end -}}

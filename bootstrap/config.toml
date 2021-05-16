@@ -5,8 +5,12 @@ extended = false
 min = "0.82.0"
 
 [[module.mounts]]
-source = "assets"
-target = "assets"
+source = "assets/js/script.js"
+target = "assets/js/script.js"
+
+[[module.mounts]]
+source = "assets/scss/blocks/bs5"
+target = "assets/scss/blocks/bs5"
 
 [[module.mounts]]
 source = "data"
@@ -52,6 +56,12 @@ ignoreImports = false
 
 [[module.imports]]
 path = "github.com/dnb-hugo/components/social"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
+[[module.imports]]
+path = "github.com/dnb-hugo/components/opensearch"
 disable = false
 ignoreConfig = false
 ignoreImports = false

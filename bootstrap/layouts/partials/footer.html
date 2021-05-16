@@ -39,4 +39,4 @@
 {{/* service worker integration via dnb-hugo/components/pwa */}}
 {{- partialCached "footer/service-worker.html" . -}}
 {{- partial "footer/debugging.html" . -}}
-{{- partialCached "hooks/footer-end-cached" . -}}
+{{- partialCached "func/hook" ( dict "hook" "footer-end" "context" . ) -}}
