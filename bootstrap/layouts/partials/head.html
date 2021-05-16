@@ -25,9 +25,13 @@
   {{- partialCached $partialPath . -}}
 {{- end -}}
 
-{{ partial "head/social" . }}
+{{ $partialSocial := "head/social" }}
+{{ if templates.Exists ( printf "partials/%s" $partialSocial ) }}
+  {{ partial "head/opensearch" . }}
+{{ end }}
 {{ block "schema" . }}{{ end }}
-{{ partial "head/opensearch" . }}
-
-
+{{ $partialOpensearch := "head/opensearch" }}
+{{ if templates.Exists ( printf "partials/%s" $partialOpensearch ) }}
+  {{ partial "head/opensearch" . }}
+{{ end }}
 
