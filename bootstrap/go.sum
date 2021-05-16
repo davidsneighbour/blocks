@@ -1,5 +1,7 @@
 github.com/dnb-hugo/components/functions v1.0.25 h1:zKJiVksbeualmvUTKn6KnltiiwFel6/hKDVK6gSHx5E=
 github.com/dnb-hugo/components/functions v1.0.25/go.mod h1:64TRuURsUFIlUqAOEgwGQmrjLbv6XOxGnl9cpBAdvg0=
+github.com/dnb-hugo/components/opensearch v1.0.2 h1:1oeFn8WCnGELcp9NhMi/91OwQYvGV17MDJy1WSWiL7M=
+github.com/dnb-hugo/components/opensearch v1.0.2/go.mod h1:njg6EUuNlbY4SbhPqXy+3E6Gebn/EwWo/UKws1Ea1mQ=
 github.com/dnb-hugo/components/pwa v1.1.10 h1:YtcGoJVKshhUNrRBIf3a9ovp0AkF5I0fRj9NX6kTmqk=
 github.com/dnb-hugo/components/pwa v1.1.10/go.mod h1:CFQcXPctmx31TAC9TEEUVeJ73kZfPQ8vlFpnvuGIuOM=
 github.com/dnb-hugo/components/social v0.0.6 h1:/Slej7Ogv6+r07DW7J0ZhXDg8rpNkJ4XY1boOMa7cqg=
