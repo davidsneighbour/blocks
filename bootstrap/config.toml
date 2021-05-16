@@ -43,6 +43,12 @@ ignoreConfig = false
 ignoreImports = false
 
 [[imports]]
+path = "github.com/dnb-hugo/libraries/bootstrap5"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
+[[imports]]
 path = "github.com/dnb-hugo/components/robots"
 disable = false
 ignoreConfig = false
