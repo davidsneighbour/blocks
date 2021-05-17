@@ -1,5 +1,5 @@
-github.com/dnb-hugo/components/functions v1.0.27 h1:Gp0xP7FW6kDA1yyEtKhyikPxTHhl3UNr2y9hZB0cnlg=
-github.com/dnb-hugo/components/functions v1.0.27/go.mod h1:64TRuURsUFIlUqAOEgwGQmrjLbv6XOxGnl9cpBAdvg0=
+github.com/dnb-hugo/components/functions v1.0.30 h1:S4XJqvSQa9VLUPgMQnJcmE8pKcX8U+7FPVcLTk5BePI=
+github.com/dnb-hugo/components/functions v1.0.30/go.mod h1:tMbnIU5Q/s6RGEsb0dhWPQRYu3W91mZPjNaMMzHcPuA=
 github.com/dnb-hugo/components/opensearch v1.0.2 h1:1oeFn8WCnGELcp9NhMi/91OwQYvGV17MDJy1WSWiL7M=
 github.com/dnb-hugo/components/opensearch v1.0.2/go.mod h1:njg6EUuNlbY4SbhPqXy+3E6Gebn/EwWo/UKws1Ea1mQ=
 github.com/dnb-hugo/components/pwa v1.1.10 h1:YtcGoJVKshhUNrRBIf3a9ovp0AkF5I0fRj9NX6kTmqk=
@@ -16,13 +16,11 @@ github.com/dnb-hugo/debugprint v1.0.14 h1:q8/sO0slKTdHCUpKQ7ds3CYxW+Quq8OENT6mtU
 github.com/dnb-hugo/debugprint v1.0.14/go.mod h1:YMvTiP34ADcKHOtCpjeIuzfDyXrh0mSKvfjVt/WXpLM=
 github.com/dnb-hugo/hooks v1.0.4 h1:d29tDBFo8MzKMkIJljCapopVieY86cyVUIOeh9m7Qw8=
 github.com/dnb-hugo/hooks v1.0.4/go.mod h1:0Knb+ubhco4/RCTXlrZoVQ11YsQ/IbBP39GYV3HeZSU=
-github.com/dnb-hugo/libraries/bootstrap5 v1.3.4 h1:SEVGaRgAx9fEUl1brUPzSf/mBZVuOF5IqV1DwJ1aR1A=
-github.com/dnb-hugo/libraries/bootstrap5 v1.3.4/go.mod h1:HY2ojoxTKJyWoQBTrm0/4vDigKn0CJ0D6fzvWZwm5N4=
-github.com/dnb-hugo/libraries/popper.js v1.1.12 h1:z8STPT5gVKG7xnt/I/+pgWRfKpfQoisbD1bDPUHHYJE=
-github.com/dnb-hugo/libraries/popper.js v1.1.12/go.mod h1:BfBnx3yJ6GRRwTPmH4OHjEanYtFzSQJl6XhZydcItiY=
+github.com/dnb-hugo/libraries/bootstrap5 v0.0.0-20210517140934-5a2b8f5907fb h1:5Eiqv63jEfEGOB9mYsyJkKBgDvyQij9vsLuTUpHce7c=
+github.com/dnb-hugo/libraries/bootstrap5 v0.0.0-20210517140934-5a2b8f5907fb/go.mod h1:rgW0mIf5h2dFNZb+tAQMjgf0RlYKnLe2AHcICuGzj04=
+github.com/dnb-hugo/libraries/popper.js v1.2.0 h1:vMq5jwR7KvSgZrLuAzWWUM5KB1lVFQYuWOKzH7l/pFY=
+github.com/dnb-hugo/libraries/popper.js v1.2.0/go.mod h1:zkFxlsMAbh2U2dUtRm4wU8841Sp8nlkqrgNQPKBntTY=
 github.com/popperjs/popper-core v2.9.2+incompatible h1:79aegxWU0Efzru0yRC1PViXx/lutzrKZdzGcvge/7SI=
 github.com/popperjs/popper-core v2.9.2+incompatible/go.mod h1:rrRYxxxrr6Y+9S8V9ttEFhsPN5sFPapL1QOzxjoDz0o=
-github.com/twbs/bootstrap v5.0.0+incompatible h1:Ko+ExGGJA0N9iEH1IEtfdLihkS+wGrsYktN+8J7gFtg=
-github.com/twbs/bootstrap v5.0.0+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
 github.com/twbs/bootstrap v5.0.1+incompatible h1:XW1ZMrcg2ZTTQFKtE/i5HUagYsAao/hqfN30dJeBpVk=
 github.com/twbs/bootstrap v5.0.1+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
