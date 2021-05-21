@@ -18,7 +18,7 @@
     "@dnb-hugo/remark-config": "2.0.11",
     "@dnb-hugo/standard-version-config": "2.0.10",
     "@dnb-hugo/stylelint-config": "2.0.24",
-    "@dnb-hugo/textlint-config": "2.0.10"
+    "@dnb-hugo/textlint-config": "2.0.12"
   },
   "homepage": "https://github.com/dnb-hugo/blocks/tree/master/bootstrap",
   "license": "MIT",
