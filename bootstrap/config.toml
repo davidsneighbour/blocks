@@ -79,7 +79,13 @@ ignoreConfig = false
 ignoreImports = false
 
 [[module.imports]]
-path = "github.com/dnb-hugo/libraries/bootstrap5"
+path = "github.com/dnb-hugo/libraries/bootstrap5/v2"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
+[[module.imports]]
+path = "github.com/dnb-hugo/libraries/bootstrap-icons"
 disable = false
 ignoreConfig = false
 ignoreImports = false
