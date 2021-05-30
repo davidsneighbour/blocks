@@ -5,8 +5,10 @@ formlink=""
 formmethod="post"
 class=""
 # form field layout
-# 1 for labels above field
-# 2 for inline label
+# above = label above
+# left = label left
+# floating = label floating
+labelstyle="floating"
 fieldlayout=1
 # only required for inline labels
 labelclass="col-sm-3 col-" # content is followed by `form-label` for positioning

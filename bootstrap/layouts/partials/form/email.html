@@ -6,11 +6,11 @@
 {{- end -}}
 
 <div class="{{ with $inlinefield }}row {{ end }}mb-3">
-  <label for="{{ .id }}" class="{{ with $inlinefield }}{{ $config.fields.inline.labelclass }}{{ end }}form-label">
-    {{- .label -}}
+  <label for="{{ .fields.id }}" class="{{ with $inlinefield }}{{ $config.fields.inline.labelclass }}{{ end }}form-label">
+    {{- .fields.label -}}
   </label>
   {{ with $inlinefield }}<div class="{{ $config.fields.inline.fieldclass }}">{{ end }}
-    <input type="email" class="form-control{{ with .size }} form-control-{{ . }}{{ end }}" id="{{ .id }}" name="{{ .id }}"
+    <input type="email" class="form-control{{ with .fields.size }} form-control-{{ . }}{{ end }}" id="{{ .fields.id }}" name="{{ .fields.id }}"
             {{- with .placeholder }} placeholder="{{ . }}"{{ end }}>
     {{ with $inlinefield }}</div>{{ end }}
 </div>

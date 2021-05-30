@@ -1,0 +1,16 @@
+<label for="{{ .id }}" class="form-label">Password</label>
+<input name="{{ .id }}" type="{{ .type }}" id="{{ .id }}" class="form-control" aria-describedby="{{ .id }}-description">
+<div id="{{ .id }}-description" class="form-text">
+  {{- .description -}}
+</div>
+
+
+{{/*<div class="{{ with $inlinefield }}row {{ end }}mb-3">*/}}
+{{/*  <label for="{{ .id }}" class="{{ with $inlinefield }}{{ $config.fields.inline.labelclass }}{{ end }}form-label">*/}}
+{{/*    {{- .label -}}*/}}
+{{/*  </label>*/}}
+{{/*  {{ with $inlinefield }}<div class="{{ $config.fields.inline.fieldclass }}">{{ end }}*/}}
+{{/*    <input type="email" class="form-control{{ with .size }} form-control-{{ . }}{{ end }}" id="{{ .id }}" name="{{ .id }}"*/}}
+{{/*            {{- with .placeholder }} placeholder="{{ . }}"{{ end }}>*/}}
+{{/*    {{ with $inlinefield }}</div>{{ end }}*/}}
+{{/*</div>*/}}

@@ -7,9 +7,13 @@
 
 <div class="{{ with $inlinefield }}row {{ end }}mb-3">
   <label for="{{ .fields.id }}" class="{{ with $inlinefield }}{{ $config.fields.inline.labelclass }}{{ end }}form-label">
-    {{- .label -}}
+    {{- .fields.label -}}
   </label>
   {{ with $inlinefield }}<div class="{{ $config.fields.inline.fieldclass }}">{{ end }}
-    <input type="password" class="form-control{{ with .fields.size }} form-control-{{ . }}{{ end }}" id="{{ .fields.id }}" name="{{ .fields.id }}">
+    <textarea class="form-control{{ with .fields.size }} form-control-{{ . }}{{ end }}" id="{{ .fields.id }}" name="{{ .fields.id }}"
+            {{- with .fields.placeholder }} placeholder="{{ . }}"{{ end }}
+            {{- with .fields.rows }} rows="{{ . }}"{{ end }}>
+      {{- .value -}}
+    </textarea>
     {{ with $inlinefield }}</div>{{ end }}
 </div>
