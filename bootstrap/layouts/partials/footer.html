@@ -1,31 +1,31 @@
-{{/*<section id="footer">*/}}
+<section id="footer">
 
-{{/*  {{ $config := index site.Data.dnb "blocks-bootstrap" "config" }}*/}}
-{{/*  {{ $footerItems := $config.footer.rows }}*/}}
-{{/*  {{ range $footerItems }}*/}}
-{{/*    <footer>*/}}
-{{/*      <section class="is--footer">*/}}
-{{/*        {{ range .item }}*/}}
-{{/*          <aside>*/}}
-{{/*            {{ if eq .type "navigation" }}*/}}
-{{/*              {{ $configuration := dict }}*/}}
-{{/*              {{ $configuration = merge $configuration (dict "menu" .name) }}*/}}
-{{/*              {{ $configuration = merge $configuration (dict "title" (.title | default "")) }}*/}}
-{{/*              {{ $configuration = merge $configuration (dict "icononly" (.icononly | default false)) }}*/}}
-{{/*              {{ $configuration = merge $configuration (dict "class" (.class | default "")) }}*/}}
-{{/*              {{ $configuration = merge $configuration (dict "classitem" (.classitem | default "")) }}*/}}
-{{/*              {{ partial "navigation" $configuration }}*/}}
-{{/*            {{ else }}*/}}
-{{/*              {{ .bla }}*/}}
-{{/*            {{ end }}*/}}
-{{/*          </aside>*/}}
-{{/*        {{ end }}*/}}
-{{/*      </section>*/}}
-{{/*    </footer>*/}}
-{{/*  {{ end }}*/}}
+  {{ $config := index site.Data.dnb "blocks-bootstrap" "config" }}
+  {{ $footerItems := $config.footer.rows }}
+  {{ range $footerItems }}
+    <footer>
+      <section class="is--footer">
+        {{ range .item }}
+          <aside>
+            {{ if eq .type "navigation" }}
+              {{ $configuration := dict }}
+              {{ $configuration = merge $configuration (dict "menu" .name) }}
+              {{ $configuration = merge $configuration (dict "title" (.title | default "")) }}
+              {{ $configuration = merge $configuration (dict "icononly" (.icononly | default false)) }}
+              {{ $configuration = merge $configuration (dict "class" (.class | default "")) }}
+              {{ $configuration = merge $configuration (dict "classitem" (.classitem | default "")) }}
+              {{ partial "navigation" $configuration }}
+            {{ else }}
+              {{ .bla }}
+            {{ end }}
+          </aside>
+        {{ end }}
+      </section>
+    </footer>
+  {{ end }}
 
-{{/*  {{ partialCached "footer/copyright.html" . $.Lang }}*/}}
-{{/*</section>*/}}
+  {{ partialCached "footer/copyright.html" . $.Lang }}
+</section>
 
 {{/* internal javascript integration */}}
 {{ with partialCached "func/getJavascript.html" . $.Lang }}

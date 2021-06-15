@@ -1,3 +1,4 @@
+{{- .Scratch.Add "trace" (slice "<blocks/partials/head/metadata.html>") -}}
 {{/*<base href="{{ .Site.BaseURL }}">*/}}
 <link rel="canonical" href="{{ .Permalink }}">
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}">
@@ -15,3 +16,4 @@
     <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
   {{ end }}
 {{ end }}
+{{- .Scratch.Add "trace" (slice "</blocks/partials/head/metadata.html>") -}}

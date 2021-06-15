@@ -4,7 +4,8 @@
 <form class="is--form" method="{{ $config.formmethod }}" action="{{ $config.formlink }}">
 
   {{ if eq $config.type "formspree" }}
-    <input type="hidden" name="_subject" value="{{ $config.subject }}">
+    <input type="hidden" name="_language" value="en" />
+    {{ with $config.subject }}<input type="hidden" name="_subject" value="{{ . }}">{{ end }}
     <input type="text" name="_gotcha" class="d-none" />
   {{ end }}
 

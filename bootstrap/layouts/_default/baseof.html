@@ -1,4 +1,5 @@
 {{- if eq true (site.Params.build | default true) -}}
+  {{- .Scratch.Add "trace" (slice "<_default/baseof.html>") -}}
   {{- $config := index site.Data.dnb "blocks-bootstrap" "config" -}}
   {{- .Scratch.Set "hasSidebar" false -}}
   {{- if (and
@@ -16,16 +17,10 @@
   <!doctype html>
   <html lang="{{- site.LanguageCode | default "en-US" -}}" class="no-js">
   <head>
-    {{- partial "func/hook" ( dict "hook" "head-init" "context" . ) -}}
-    <meta charset="{{- $config.head.charset | default "utf-8" -}}">
-    <meta name="viewport" content="{{- $config.head.viewport | default "width=device-width, initial-scale=1, shrink-to-fit=no" -}}">
-    <title>{{- block "title" . -}}{{- with .Title -}}{{- . -}} | {{- end -}}{{- .Site.Title -}}{{- end -}}</title>
-    {{- partial "func/hook" ( dict "hook" "head-start" "context" . ) -}}
     {{- partial "head" . -}}
-    {{- partial "func/hook" ( dict "hook" "head-end" "context" . ) -}}
   </head>
 
-  <body id="{{- .Site.Params.Siteslug | default "bootstrap" -}}">
+  <body id="{{- site.Params.Siteslug | default "bootstrap" -}}">
   {{- partial "func/hook" ( dict "hook" "body-start" "context" . ) -}}
   {{- partial "header" . -}}
   {{- partial "func/hook" ( dict "hook" "container-start" "context" . ) -}}
@@ -47,4 +42,5 @@
   </body>
   </html>
   {{- partial "func/hook" ( dict "hook" "teardown" "context" . ) -}}
+  {{- .Scratch.Add "trace" (slice "</_default/baseof.html>") -}}
 {{- end -}}

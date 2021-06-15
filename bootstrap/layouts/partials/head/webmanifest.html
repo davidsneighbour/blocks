@@ -1,0 +1,8 @@
+{{- .Scratch.Add "trace" (slice "<blocks/partials/head/webmanifest.html>") -}}
+{{- $partialPath := "head/pwa.html" -}}
+{{- if templates.Exists (printf "partials/%s" $partialPath) -}}
+  {{- partialCached $partialPath . -}}
+{{- else -}}
+  {{/* add a note about the pwa component */}}
+{{- end -}}
+{{- .Scratch.Add "trace" (slice "</blocks/partials/head/webmanifest.html>") -}}

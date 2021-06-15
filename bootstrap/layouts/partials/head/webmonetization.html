@@ -1,0 +1,5 @@
+{{- .Scratch.Add "trace" (slice "<blocks/partials/head/webmonetization.html>") -}}
+{{- with site.Data.dnb.blocks.bootstrap5.config.monetization_url -}}
+  <meta name="monetization" content="{{ . }}">
+{{- end -}}
+{{- .Scratch.Add "trace" (slice "</blocks/partials/head/webmonetization.html>") -}}

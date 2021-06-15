@@ -1,8 +1,8 @@
 {{- define "main" -}}
-  {{- .Scratch.Add "trace" (slice "<_default/list.html>") -}}
+  {{- .Scratch.Add "trace" (slice "<_default/section.html>") -}}
   {{- partial "content/header" . -}}
   <div class="content">{{- .Content -}}</div>
-
+  <!-- blocks/bootstrap/layouts/_default/section.html -->
   {{- range .Pages -}}
     <div class="card border-secondary mb-3">
       <div class="card-header bg-transparent d-flex justify-content-between">
@@ -27,5 +27,5 @@
       </div>
     </div>
   {{- end -}}
-  {{- .Scratch.Add "trace" (slice "</_default/list.html>") -}}
+  {{- .Scratch.Add "trace" (slice "</_default/section.html>") -}}
 {{- end -}}

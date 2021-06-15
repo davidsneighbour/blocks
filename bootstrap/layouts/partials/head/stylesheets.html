@@ -1,0 +1,22 @@
+{{- .Scratch.Add "trace" (slice "<blocks/partials/head/stylesheets.html>") -}}
+{{- $critical := resources.Get "critical.css" -}}
+{{/*{{- with $critical -}}*/}}
+{{/*  <style>*/}}
+{{/*    {{- .Content | safeCSS -}}*/}}
+{{/*  </style>*/}}
+{{/*{{- end -}}*/}}
+{{- with partialCached "func/getStylesheet.html" . $.Lang -}}
+  <link rel="stylesheet"
+        href="{{ .Permalink }}"
+        media="print"
+        onload="this.media='all'; this.onload=null;"
+        integrity="{{ .Data.Integrity | html }}">
+  <noscript>
+    <link
+            rel="stylesheet"
+            media="all"
+            href="{{ .Permalink }}"
+            integrity="{{ .Data.Integrity | html }}">
+  </noscript>
+{{- end -}}
+{{- .Scratch.Add "trace" (slice "</blocks/partials/head/stylesheets.html>") -}}

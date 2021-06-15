@@ -1,0 +1,8 @@
+{{- .Scratch.Add "trace" (slice "<blocks/partials/head/opensearch.html>") -}}
+{{- $partialOpensearch := "head/opensearch" -}}
+{{- if templates.Exists ( printf "partials/%s" $partialOpensearch ) -}}
+  {{- partial "head/opensearch" . -}}
+{{- else -}}
+  {{- /* add a note about the open search component */ -}}
+{{- end -}}
+{{- .Scratch.Add "trace" (slice "</blocks/partials/head/opensearch.html>") -}}
