@@ -31,7 +31,7 @@ placeholder="Your Email Address"
 value=""
 
 [[fields]]
-id="Comment"
+id="comment"
 type="textarea"
 label="Your Message"
 layout="col-md-12"

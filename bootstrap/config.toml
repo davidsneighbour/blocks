@@ -5,8 +5,16 @@ extended = false
 min = "0.82.0"
 
 [[module.mounts]]
+source = "assets"
+target = "assets"
+
+[[module.mounts]]
 source = "assets/js/script.js"
 target = "assets/js/script.js"
+
+[[module.mounts]]
+source = "assets/js/debugtrace.js"
+target = "assets/js/debugtrace.js"
 
 [[module.mounts]]
 source = "assets/scss/blocks/bs5"
@@ -94,6 +102,16 @@ ignoreImports = false
 [params.dnb]
 [params.dnb.config]
 debug = false
+[params.dnb.config.js]
+method = "all" # one of all, js or jsbuild
+[params.dnb.config.jsbuild.options]
+minify = true
+avoidTDZ = true
+target = "es2018"
+externals = "slice"
+defines = "dict"
+format = "iife"
+sourceMap = "inline"
 
 [params.dnb.head]
 viewport = "width=device-width, initial-scale=1, shrink-to-fit=no"
