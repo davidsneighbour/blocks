@@ -14,8 +14,8 @@ github.com/dnb-hugo/components/social v0.0.6 h1:/Slej7Ogv6+r07DW7J0ZhXDg8rpNkJ4X
 github.com/dnb-hugo/components/social v0.0.6/go.mod h1:ddMwargXmdMt1fAhfSKdJAGuUUBFUD3Qb9yzgojDjas=
 github.com/dnb-hugo/debugprint v1.0.14 h1:q8/sO0slKTdHCUpKQ7ds3CYxW+Quq8OENT6mtUkPlEk=
 github.com/dnb-hugo/debugprint v1.0.14/go.mod h1:YMvTiP34ADcKHOtCpjeIuzfDyXrh0mSKvfjVt/WXpLM=
-github.com/dnb-hugo/hooks v1.0.4 h1:d29tDBFo8MzKMkIJljCapopVieY86cyVUIOeh9m7Qw8=
-github.com/dnb-hugo/hooks v1.0.4/go.mod h1:0Knb+ubhco4/RCTXlrZoVQ11YsQ/IbBP39GYV3HeZSU=
+github.com/dnb-hugo/hooks v1.0.5 h1:/5fDDq8Ee3QZ+r3+z2bPrSe33AgcVmNuoxtqTuBDDb0=
+github.com/dnb-hugo/hooks v1.0.5/go.mod h1:Mp7Ce8FEtmyAG60W55mkYc6htjYuLuO6ubMn+ma0+u4=
 github.com/dnb-hugo/libraries/bootstrap-icons v1.5.0 h1:wzQLAweYWPP9TXcLog89FqVrela+EvAbJCd19U2lea8=
 github.com/dnb-hugo/libraries/bootstrap-icons v1.5.0/go.mod h1:KKhGcgjtwdDjh29htC/U8239ait4wF+VU7/p2NepQTY=
 github.com/dnb-hugo/libraries/bootstrap5/v2 v2.1.4 h1:bBqJfH6rl2ZQclDjkqcoNEAUDie6L6ho7D4xFOeAr0Q=
