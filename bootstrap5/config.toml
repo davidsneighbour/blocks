@@ -3,6 +3,10 @@ extended = false
 min = "0.56.0"
 
 [[module.mounts]]
+source = "assets"
+target = "assets"
+
+[[module.mounts]]
 source = "data"
 target = "data"
 
@@ -16,16 +20,24 @@ target = "layouts"
 
 [[module.imports]]
 path = "github.com/dnb-hugo/components/functions"
-disabled = false
+disable = false
+ignoreConfig = false
+ignoreImports = false
 
 [[module.imports]]
 path = "github.com/dnb-hugo/components/pwa"
-disabled = false
+disable = false
+ignoreConfig = false
+ignoreImports = false
 
 [[module.imports]]
 path = "github.com/dnb-hugo/components/auditor"
-disabled = false
+disable = false
+ignoreConfig = false
+ignoreImports = false
 
 [[module.imports]]
 path = "github.com/dnb-hugo/components/social"
-disabled = false
+disable = false
+ignoreConfig = false
+ignoreImports = false
