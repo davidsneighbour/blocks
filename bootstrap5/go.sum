@@ -1,8 +1,8 @@
-github.com/dnb-hugo/components/auditor v0.0.0-20210524130247-31c4e88651e5 h1:x9ew3AB6gqRv1ajnRPH8NqLS1hge2WzXBhaYZHzDuFg=
-github.com/dnb-hugo/components/auditor v0.0.0-20210524130247-31c4e88651e5/go.mod h1:aTKEpR7w/McMNYhmTDYH46PQvNwWTeo1a1mvBFvzESk=
-github.com/dnb-hugo/components/functions v1.0.30 h1:S4XJqvSQa9VLUPgMQnJcmE8pKcX8U+7FPVcLTk5BePI=
-github.com/dnb-hugo/components/functions v1.0.30/go.mod h1:tMbnIU5Q/s6RGEsb0dhWPQRYu3W91mZPjNaMMzHcPuA=
-github.com/dnb-hugo/components/pwa v1.1.10 h1:YtcGoJVKshhUNrRBIf3a9ovp0AkF5I0fRj9NX6kTmqk=
-github.com/dnb-hugo/components/pwa v1.1.10/go.mod h1:CFQcXPctmx31TAC9TEEUVeJ73kZfPQ8vlFpnvuGIuOM=
-github.com/dnb-hugo/components/social v0.0.6 h1:/Slej7Ogv6+r07DW7J0ZhXDg8rpNkJ4XY1boOMa7cqg=
-github.com/dnb-hugo/components/social v0.0.6/go.mod h1:ddMwargXmdMt1fAhfSKdJAGuUUBFUD3Qb9yzgojDjas=
+github.com/dnb-hugo/components/auditor v0.0.0-20210623082833-104b099ff52f h1:4/Lxn6Qtwkih30ARRGdcpl+y+gcT5Z8rGGSbaabALZI=
+github.com/dnb-hugo/components/auditor v0.0.0-20210623082833-104b099ff52f/go.mod h1:aTKEpR7w/McMNYhmTDYH46PQvNwWTeo1a1mvBFvzESk=
+github.com/dnb-hugo/components/functions v1.0.34 h1:BRUiG+jQko/WYfV4SrmsYQw6yZ7l3qANp03yj9Eb47o=
+github.com/dnb-hugo/components/functions v1.0.34/go.mod h1:tMbnIU5Q/s6RGEsb0dhWPQRYu3W91mZPjNaMMzHcPuA=
+github.com/dnb-hugo/components/pwa v1.1.13 h1:WU41/c9xPsGn6RujTuXjAzAFNcSZ7QkVr4KP2Z2Y+yk=
+github.com/dnb-hugo/components/pwa v1.1.13/go.mod h1:r9xQNFQBVABmbrTJjKr31NAOgV7WpnwhTt5YLbo05O0=
+github.com/dnb-hugo/components/social v0.0.7 h1:oIoEtzKEoPnBndFJuYYoqgPtkbCF5yGikClYOgqMaWM=
+github.com/dnb-hugo/components/social v0.0.7/go.mod h1:kpoA+JQA3McpZ1ewwoqU8ayBv5iU95DYO7oM2s6A/pg=
