@@ -1,0 +1,64 @@
+[dnb]
+
+[dnb.config]
+debug = false
+
+[dnb.config.js]
+method = "all" # one of all, js or jsbuild
+
+[dnb.config.jsbuild.options]
+minify = true
+avoidTDZ = true
+target = "es2018"
+externals = "slice"
+defines = "dict"
+format = "iife"
+sourceMap = "inline"
+
+[dnb.head]
+viewport = "width=device-width, initial-scale=1, shrink-to-fit=no"
+charset = "utf-8"
+# see https://webmonetization.org/docs/getting-started/
+monetization_url = ""
+
+[dnb.header]
+menu = "main"
+
+[dnb.header.logo]
+src = "/images/logos/hugo-logo-wordmark.svg"
+width = 300
+height = 40
+
+[dnb.layout]
+sidebar_enabled = true
+
+[dnb.footer]
+
+[[dnb.footer.rows]]
+[[dnb.footer.rows.item]]
+type = "navigation"
+name = "official"
+title = "Official Hugo Resources"
+[[dnb.footer.rows.item]]
+type = "navigation"
+name = "github"
+title = "Hugo Repositories"
+[[dnb.footer.rows.item]]
+type = "navigation"
+name = "social"
+icononly=true
+class = "social-icons"
+
+[[dnb.footer.rows]]
+[[dnb.footer.rows.item]]
+type = "navigation"
+name = "configurations"
+title = "@dnb-hugo Configurations"
+class = "list-inline"
+classitem = "list-inline-item"
+
+[dnb.footer.copyright]
+logo = "/images/logos/logo.png"
+width = 200
+height = 206
+copyline = ""

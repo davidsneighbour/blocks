@@ -1,0 +1,97 @@
+[hugoVersion]
+extended = false
+min = "0.84.0"
+
+[[mounts]]
+source = "assets"
+target = "assets"
+
+[[mounts]]
+source = "assets/js/script.js"
+target = "assets/js/script.js"
+
+[[mounts]]
+source = "assets/js/debugtrace.js"
+target = "assets/js/debugtrace.js"
+
+[[mounts]]
+source = "assets/scss/blocks/bs5"
+target = "assets/scss/blocks/bs5"
+
+[[mounts]]
+source = "data"
+target = "data"
+
+[[mounts]]
+source = "i18n"
+target = "i18n"
+
+[[mounts]]
+source = "layouts"
+target = "layouts"
+
+[[imports]]
+path = "github.com/dnb-hugo/components/functions"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
+[[imports]]
+path = "github.com/dnb-hugo/components/opensearch"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
+[[imports]]
+path = "github.com/dnb-hugo/components/pwa"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
+[[imports]]
+path = "github.com/dnb-hugo/components/renderhooks"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
+[[imports]]
+path = "github.com/dnb-hugo/components/robots"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
+[[imports]]
+path = "github.com/dnb-hugo/components/sitemap"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
+[[imports]]
+path = "github.com/dnb-hugo/components/social"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
+[[imports]]
+path = "github.com/dnb-hugo/debugprint"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
+[[imports]]
+path = "github.com/dnb-hugo/hooks"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
+[[imports]]
+path = "github.com/dnb-hugo/libraries/bootstrap5/v2"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
+[[imports]]
+path = "github.com/dnb-hugo/libraries/bootstrap-icons"
+disable = false
+ignoreConfig = false
+ignoreImports = false
