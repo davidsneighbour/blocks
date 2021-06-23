@@ -15,5 +15,3 @@ require (
 	github.com/dnb-hugo/libraries/bootstrap-icons v1.5.0 // indirect
 	github.com/dnb-hugo/libraries/bootstrap5/v2 v2.1.4 // indirect
 )
-
-replace github.com/dnb-hugo/libraries/bootstrap5/v2 => /home/patrick/Projects/dnb-hugo/libraries/bootstrap5

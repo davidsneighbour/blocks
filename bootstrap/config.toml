@@ -1,8 +1,7 @@
-contentDir = "documentation"
-
 [module.hugoVersion]
 extended = false
 min = "0.82.0"
+max = "0.83.1"
 
 [[module.mounts]]
 source = "assets"
