@@ -1,11 +1,16 @@
+{{- .Scratch.Add "trace" (slice "<partials/content/header.html>") -}}
 <header>
   <h1>{{- .Title | safeHTML -}}</h1>
   <div class="d-flex justify-content-between">
-    <div class="keywords">
-      {{- range .Keywords -}}
-        <span class="badge bg-info me-3 d-inline-block">{{- . | upper -}}</span>
-      {{- end -}}
+    {{ with .Keywords }}
+      <div class="d-flex justify-content-between">
+      <div class="keywords">
+        {{- range . -}}
+          <span class="badge bg-info me-3 d-inline-block">{{- . | upper -}}</span>
+        {{- end -}}
+      </div>
     </div>
+    {{ end }}
     <p>Last Modified:
       <span title="{{- with partial "func/formatOrdinalDate" (dict "format" "January 2%s, 2006 at 15:04 UTCMST:00" "date" .Lastmod ) -}}{{- . -}}{{- end -}}">
           {{- .Lastmod.Format "January 2, 2006" -}}
@@ -16,3 +21,4 @@
     </p>
   </div>
 </header>
+{{- .Scratch.Add "trace" (slice "<_partials/content/header.html>") -}}

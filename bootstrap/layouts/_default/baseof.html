@@ -39,8 +39,9 @@
   {{- partial "func/hook" ( dict "hook" "container-end" "context" . ) -}}
   {{- partial "footer" . -}}
   {{- partial "func/hook" ( dict "hook" "body-end" "context" . ) -}}
+  {{- .Scratch.Add "trace" (slice "</_default/baseof.html>") -}}
+  {{- partial "global/debugging.html" . -}}
   </body>
   </html>
   {{- partial "func/hook" ( dict "hook" "teardown" "context" . ) -}}
-  {{- .Scratch.Add "trace" (slice "</_default/baseof.html>") -}}
 {{- end -}}
