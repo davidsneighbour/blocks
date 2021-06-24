@@ -6,9 +6,9 @@ viewport = "width=device-width, initial-scale=1, shrink-to-fit=no"
 charset = "utf-8"
 
 [header]
-menu="main"
+menu = "main"
 [header.logo]
-src="/images/logos/hugo-logo-wordmark.svg"
+src = "/images/logos/hugo-logo-wordmark.svg"
 width=300
 height=40
 
@@ -18,30 +18,30 @@ sidebar_enabled = true
 [footer]
 [[footer.rows]]
 [[footer.rows.item]]
-type="navigation"
-name="official"
-title="Official Hugo Resources"
+type = "navigation"
+name = "official"
+title = "Official Hugo Resources"
 [[footer.rows.item]]
-type="navigation"
-name="github"
-title="Hugo Repositories"
+type = "navigation"
+name = "github"
+title = "Hugo Repositories"
 [[footer.rows.item]]
-type="navigation"
-name="social"
+type = "navigation"
+name = "social"
 icononly=true
-class="social-icons"
+class = "social-icons"
 [[footer.rows]]
 [[footer.rows.item]]
-type="navigation"
-name="configurations"
-title="@dnb-hugo Configurations"
-class="list-inline"
-classitem="list-inline-item"
+type = "navigation"
+name = "configurations"
+title = "@dnb-hugo Configurations"
+class = "list-inline"
+classitem = "list-inline-item"
 [footer.copyright]
-logo="/images/logos/logo.png"
+logo = "/images/logos/logo.png"
 width=200
 height=206
-copyline=""
+copyline = ""
 
 [plugins]
 [plugins.head]
