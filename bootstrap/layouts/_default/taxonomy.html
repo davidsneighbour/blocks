@@ -1,5 +1,5 @@
 {{- define "main" -}}
-  {{- .Scratch.Add "trace" (slice "<_default/list.html>") -}}
+  {{- .Scratch.Add "trace" (slice "<_default/taxonomy.html>") -}}
   {{- partial "content/header" . -}}
   <div class="content">{{- .Content -}}</div>
   {{- range .Pages -}}
@@ -26,5 +26,5 @@
       </div>
     </div>
   {{- end -}}
-  {{- .Scratch.Add "trace" (slice "</_default/list.html>") -}}
+  {{- .Scratch.Add "trace" (slice "</_default/taxonomy.html>") -}}
 {{- end -}}
