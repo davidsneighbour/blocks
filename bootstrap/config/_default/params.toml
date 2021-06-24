@@ -4,7 +4,11 @@
 debug = false
 
 [dnb.config.js]
-method = "all" # one of all, js or jsbuild
+# enable/disable javascript pipelines
+# all - both types are created
+# js - conventional js pipeline
+# jsbuild - module pipeline via babel
+method = "js"
 
 [dnb.config.jsbuild.options]
 minify = true

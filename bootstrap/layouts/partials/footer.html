@@ -27,18 +27,22 @@
   {{ partialCached "footer/copyright.html" . $.Lang }}
 </section>
 
-{{/* internal javascript integration */}}
-{{ with partialCached "func/getJavascript.html" . $.Lang }}
-  <script src="{{.RelPermalink}}" integrity="{{ .Data.Integrity | html }}"
-          crossorigin="anonymous" async defer
-          type="text/javascript"></script>
-{{ end }}
-{{/* javascript module integration */}}
-{{ with partialCached "func/getJavascriptByBuild" . $.Lang }}
-  <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity | html }}"
-          crossorigin="anonymous" async defer
-          type="text/javascript"></script>
-{{ end }}
+{{- /* internal javascript integration */ -}}
+{{- if in "all js" site.Params.dnb.config.js.method -}}
+  {{- with partialCached "func/getJavascript.html" . $.Lang -}}
+    <script src="{{- .RelPermalink -}}" integrity="{{- .Data.Integrity | html -}}"
+            crossorigin="anonymous" async defer
+            type="text/javascript"></script>
+  {{- end -}}
+{{- end -}}
+
+{{- /* javascript module integration */ -}}
+{{- if in "all jsbuild" site.Params.dnb.config.js.method -}}
+  {{- with partialCached "func/getJavascriptByBuild" . $.Lang -}}
+    <script src="{{- .RelPermalink -}}" integrity="{{- .Data.Integrity | html -}}"
+            crossorigin="anonymous" async defer></script>
+  {{- end -}}
+{{- end -}}
 
 {{/* service worker integration via dnb-hugo/components/pwa */}}
 {{- partialCached "footer/service-worker.html" . -}}
