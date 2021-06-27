@@ -2,13 +2,13 @@
   {{- .Scratch.Add "trace" (slice "<_default/baseof.html>") -}}
   {{- $config := index site.Data.dnb "blocks-bootstrap" "config" -}}
   {{- .Scratch.Set "hasSidebar" false -}}
-  {{- if (and
-          (isset $config "layout")
-          (isset $config.layout "sidebar_enabled")
-          (eq $config.layout.sidebar_enabled true)
-    ) -}}
-    {{- .Scratch.Set "hasSidebar" true -}}
-  {{- end -}}
+  {{- if isset $config "layout" }}
+    {{ if isset $config.layout "sidebar_enabled" }}
+      {{ if eq $config.layout.sidebar_enabled true }}
+        {{- .Scratch.Set "hasSidebar" true -}}
+      {{- end -}}
+    {{ end }}
+  {{ end }}
   {{- .Scratch.Set "enableTemplateWarnings" true -}}
   {{- if (and (isset ($.Param "dnb") "enableTemplateWarnings") (eq ($.Param "dnb.enableTemplateWarnings") false )) -}}
     {{- .Scratch.Set "enableTemplateWarnings" false -}}

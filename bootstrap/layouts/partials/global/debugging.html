@@ -1,6 +1,6 @@
 {{- $config := index site.Data.dnb "blocks-bootstrap" "config" -}}
-{{- if and (isset $config "debug") (eq $config.debug true) -}}
-  {{- if .Site.IsServer -}}
+{{- with $config.debug -}}
+  {{- if site.IsServer -}}
     <footer id="debugging">
       <div class="container">
         <div class="row">
@@ -15,11 +15,7 @@
         </div>
       </div>
     </footer>
-  {{- end -}}
-{{- end -}}
 
-{{- if and (isset $config "debug") (eq $config.debug true) -}}
-  {{- if .Site.IsServer -}}
     <footer id="debugging">
       <div class="container">
         <div class="row">

@@ -1,4 +1,4 @@
 {{- .Scratch.Add "trace" (slice "<blocks/partials/head/static-metadata.html>") -}}
 {{ with site.Author.name }}
-<meta name="author" content="{{ . }}">{{ end }}
+  <meta name="author" content="{{ . }}">{{ end }}
 {{- .Scratch.Add "trace" (slice "</blocks/partials/head/static-metadata.html>") -}}
