@@ -14,7 +14,7 @@
               {{ $configuration = merge $configuration (dict "icononly" (.icononly | default false)) }}
               {{ $configuration = merge $configuration (dict "class" (.class | default "")) }}
               {{ $configuration = merge $configuration (dict "classitem" (.classitem | default "")) }}
-              {{ partial "navigation" $configuration }}
+              {{ partial "navigation.html" $configuration }}
             {{ else }}
               {{ .bla }}
             {{ end }}
@@ -38,7 +38,7 @@
 
 {{- /* javascript module integration */ -}}
 {{- if in "all jsbuild" site.Params.dnb.config.js.method -}}
-  {{- with partialCached "func/getJavascriptByBuild" . $.Lang -}}
+  {{- with partialCached "func/getJavascriptByBuild.html" . $.Lang -}}
     <script src="{{- .RelPermalink -}}" integrity="{{- .Data.Integrity | html -}}"
             crossorigin="anonymous" async defer></script>
   {{- end -}}
@@ -46,4 +46,4 @@
 
 {{/* service worker integration via dnb-hugo/components/pwa */}}
 {{- partialCached "footer/service-worker.html" . -}}
-{{- partialCached "func/hook" ( dict "hook" "footer-end" "context" . ) -}}
+{{- partialCached "func/hook.html" ( dict "hook" "footer-end" "context" . ) -}}

@@ -3,17 +3,22 @@
 {{- $config := index site.Data.dnb "blocks-bootstrap" "config" -}}
 {{- $globalPrivacy := site.Config.Privacy -}}
 {{- /* primary meta tags */ -}}
-{{- partial "func/hook" ( dict "hook" "head-init" "context" . ) -}}
+{{- partial "func/hook.html" ( dict "hook" "head-init" "context" . ) -}}
 <meta charset="{{- $config.head.charset | default "utf-8" -}}">
 <meta name="viewport" content="{{- $config.head.viewport | default "width=device-width, initial-scale=1, shrink-to-fit=no" -}}">
 <title>{{- block "title" . -}}{{- with .Title -}}{{- . | plainify }} | {{ end -}}{{- .Site.Title | plainify -}}{{- end -}}</title>
-{{- partial "func/hook" ( dict "hook" "head-start" "context" . ) -}}
+{{- partial "func/hook.html" ( dict "hook" "head-start" "context" . ) -}}
 {{- /* important meta tags */ -}}{{- partial "head/metadata.html" . -}}
 {{- /* stylesheets */ -}}{{- partial "head/stylesheets.html" . -}}
-{{- /* static meta tags */ -}}{{- partialCached "head/static-metadata" . -}}
-{{- /* social meta data, graphs and schemas */ -}}{{- partialCached "head/social" . -}}
-{{- /* open search meta data */ -}}{{- partialCached "head/opensearch" . -}}
-{{- /* web monetization tag */ -}}{{- partialCached "head/webmonetization" . -}}
-{{- /* webmanifest partial (if it exists)  */ -}}{{- partialCached "head/webmanifest" . -}}
-{{- partial "func/hook" ( dict "hook" "head-end" "context" . ) -}}
+{{- /* static meta tags */ -}}{{- partialCached "head/static-metadata.html" . -}}
+{{- /* social meta data, graphs and schemas */ -}}{{- partialCached "head/social.html" . -}}
+{{- /* open search meta data */ -}}{{- $partialOpensearch := "head/opensearch.html" -}}
+{{- if templates.Exists ( printf "partials/%s" $partialOpensearch ) -}}
+  {{- partialCached "head/opensearch.html" . -}}
+{{ else }}
+  {{ warnf "bla" }}"}}
+{{- end -}}
+{{- /* web monetization tag */ -}}{{- partialCached "head/webmonetization.html" . -}}
+{{- /* webmanifest partial (if it exists)  */ -}}{{- partialCached "head/webmanifest.html" . -}}
+{{- partial "func/hook.html" ( dict "hook" "head-end" "context" . ) -}}
 {{- .Scratch.Add "trace" (slice "</blocks/partials/head.html>") -}}

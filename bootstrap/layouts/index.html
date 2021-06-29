@@ -1,8 +1,8 @@
 {{ define "main" }}
   {{ $config := index site.Data.dnb "blocks-bootstrap" "config" }}
   {{ if eq $config.homepage.type "single" }}
-    {{ partial "home/single" . }}
+    {{ partial "home/single.html" . }}
   {{ else }}
-    {{ partial "home/list" . }}
+    {{ partial "home/list.html" . }}
   {{ end }}
 {{ end }}

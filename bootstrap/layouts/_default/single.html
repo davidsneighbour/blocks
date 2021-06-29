@@ -1,6 +1,6 @@
 {{- define "main" -}}
   {{- .Scratch.Add "trace" (slice "<_default/single.html>") -}}
-  {{- partial "content/header" . -}}
+  {{- partial "content/header.html" . -}}
   <div class="content">{{- .Content -}}</div>
   {{- .Scratch.Add "trace" (slice "</_default/single.html>") -}}
 {{- end -}}

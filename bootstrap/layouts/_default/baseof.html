@@ -13,35 +13,35 @@
   {{- if (and (isset ($.Param "dnb") "enableTemplateWarnings") (eq ($.Param "dnb.enableTemplateWarnings") false )) -}}
     {{- .Scratch.Set "enableTemplateWarnings" false -}}
   {{- end -}}
-  {{- partial "func/hook" ( dict "hook" "setup" "context" . ) -}}
+  {{- partial "func/hook.html" ( dict "hook" "setup" "context" . ) -}}
   <!doctype html>
   <html lang="{{- site.LanguageCode | default "en-US" -}}" class="no-js">
   <head>
-    {{- partial "head" . -}}
+    {{- partial "head.html" . -}}
   </head>
 
   <body id="{{- site.Params.Siteslug | default "bootstrap" -}}">
-  {{- partial "func/hook" ( dict "hook" "body-start" "context" . ) -}}
-  {{- partial "header" . -}}
-  {{- partial "func/hook" ( dict "hook" "container-start" "context" . ) -}}
+  {{- partial "func/hook.html" ( dict "hook" "body-start" "context" . ) -}}
+  {{- partial "header.html" . -}}
+  {{- partial "func/hook.html" ( dict "hook" "container-start" "context" . ) -}}
   <main id="content">
     <div class="row">
       <div id="main">
-        {{- partial "func/hook" ( dict "hook" "content-start" "context" . ) -}}
+        {{- partial "func/hook.html" ( dict "hook" "content-start" "context" . ) -}}
         {{- block "main" . -}}{{- end -}}
-        {{- partial "func/hook" ( dict "hook" "content-end" "context" . ) -}}
+        {{- partial "func/hook.html" ( dict "hook" "content-end" "context" . ) -}}
       </div>
       {{- if eq (.Scratch.Get "hasSidebar") true -}}
-        {{- partial "sidebar" . -}}
+        {{- partial "sidebar.html" . -}}
       {{- end -}}
     </div>
   </main>
-  {{- partial "func/hook" ( dict "hook" "container-end" "context" . ) -}}
-  {{- partial "footer" . -}}
-  {{- partial "func/hook" ( dict "hook" "body-end" "context" . ) -}}
+  {{- partial "func/hook.html" ( dict "hook" "container-end" "context" . ) -}}
+  {{- partial "footer.html" . -}}
+  {{- partial "func/hook.html" ( dict "hook" "body-end" "context" . ) -}}
   {{- .Scratch.Add "trace" (slice "</_default/baseof.html>") -}}
   {{- partial "global/debugging.html" . -}}
   </body>
   </html>
-  {{- partial "func/hook" ( dict "hook" "teardown" "context" . ) -}}
+  {{- partial "func/hook.html" ( dict "hook" "teardown" "context" . ) -}}
 {{- end -}}

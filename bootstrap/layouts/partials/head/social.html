@@ -1,7 +1,7 @@
 {{- .Scratch.Add "trace" (slice "<blocks/partials/head/social.html>") -}}
-{{- $partialSocial := "head/social" -}}
+{{- $partialSocial := "head/social.html" -}}
 {{- if templates.Exists ( printf "partials/%s" $partialSocial ) -}}
-  {{- partial "head/opensearch" . -}}
+  {{- partial "head/opensearch.html" . -}}
 {{- end -}}
 {{- block "schema" . -}}{{- end -}}
 {{- .Scratch.Add "trace" (slice "</blocks/partials/head/social.html>") -}}

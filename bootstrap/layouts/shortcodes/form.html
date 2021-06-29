@@ -1,2 +1,2 @@
 {{ $form := (index site.Data.dnb.forms (.Get 0)) }}
-{{ partialCached "form/_form" (dict "config" $form.config "fields" $form.fields "buttons" $form.buttons) }}
+{{ partialCached "form/_form.html" (dict "config" $form.config "fields" $form.fields "buttons" $form.buttons) }}

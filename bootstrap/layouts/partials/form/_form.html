@@ -12,13 +12,13 @@
   <div class="row">
     {{ range $fields }}
       <div class="{{ .layout }}">
-        {{ partial (printf "form/%s" .type) (dict "fields" . "config" $config) }}
+        {{ partial (printf "form/%s.html" .type) (dict "fields" . "config" $config) }}
       </div>
     {{ end }}
   </div>
 
   {{ range $buttons }}
-    {{ partial (printf "form/%s" .type) . }}
+    {{ partial (printf "form/%s.html" .type) . }}
   {{ end }}
 
 </form>

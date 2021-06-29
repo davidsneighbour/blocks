@@ -1,6 +1,6 @@
 {{- define "main" -}}
   {{- .Scratch.Add "trace" (slice "<_default/list.html>") -}}
-  {{- partial "content/header" . -}}
+  {{- partial "content/header.html" . -}}
   <div class="content">{{- .Content -}}</div>
   {{- range .Pages -}}
     <div class="card border-secondary mb-3">
