@@ -14,7 +14,7 @@
 {{- /* social meta data, graphs and schemas */ -}}{{- partialCached "head/social" . -}}
 {{- /* open search meta data */ -}}{{- $partialOpensearch := "head/opensearch" -}}
 {{- if templates.Exists ( printf "partials/%s" $partialOpensearch ) -}}
-  {{- partial "head/opensearch" . -}}
+  {{- partialCached "head/opensearch" . -}}
 {{- end -}}
 {{- /* web monetization tag */ -}}{{- partialCached "head/webmonetization" . -}}
 {{- /* webmanifest partial (if it exists)  */ -}}{{- partialCached "head/webmanifest" . -}}
