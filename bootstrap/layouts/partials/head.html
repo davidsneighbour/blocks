@@ -12,10 +12,7 @@
 {{- /* stylesheets */ -}}{{- partial "head/stylesheets.html" . -}}
 {{- /* static meta tags */ -}}{{- partialCached "head/static-metadata" . -}}
 {{- /* social meta data, graphs and schemas */ -}}{{- partialCached "head/social" . -}}
-{{- /* open search meta data */ -}}{{- $partialOpensearch := "head/opensearch" -}}
-{{- if templates.Exists ( printf "partials/%s" $partialOpensearch ) -}}
-  {{- partialCached "head/opensearch" . -}}
-{{- end -}}
+{{- /* open search meta data */ -}}{{- partialCached "head/opensearch" . -}}
 {{- /* web monetization tag */ -}}{{- partialCached "head/webmonetization" . -}}
 {{- /* webmanifest partial (if it exists)  */ -}}{{- partialCached "head/webmanifest" . -}}
 {{- partial "func/hook" ( dict "hook" "head-end" "context" . ) -}}
