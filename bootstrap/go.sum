@@ -1,7 +1,7 @@
 github.com/dnb-hugo/components/functions v1.0.35 h1:85EJSuMPDvx2xqcyfMqRCoinSPJWR/vcJevaSciNSsQ=
 github.com/dnb-hugo/components/functions v1.0.35/go.mod h1:tMbnIU5Q/s6RGEsb0dhWPQRYu3W91mZPjNaMMzHcPuA=
-github.com/dnb-hugo/components/opensearch v1.0.8 h1:qCiNPuGnOiUKVUzxRWFz/TTyMag7vsKjGgjYb3F7RSw=
-github.com/dnb-hugo/components/opensearch v1.0.8/go.mod h1:OwdeJ+W22OqljKgRho+B1o4xQF0AvTu3dF26XO4q1B4=
+github.com/dnb-hugo/components/opensearch v1.0.9 h1:QyiSUPqRlHFS9ME3Vcd9OMIWusTTy0AbCD6FfVp3fw8=
+github.com/dnb-hugo/components/opensearch v1.0.9/go.mod h1:OwdeJ+W22OqljKgRho+B1o4xQF0AvTu3dF26XO4q1B4=
 github.com/dnb-hugo/components/pwa v1.1.13 h1:WU41/c9xPsGn6RujTuXjAzAFNcSZ7QkVr4KP2Z2Y+yk=
 github.com/dnb-hugo/components/pwa v1.1.13/go.mod h1:r9xQNFQBVABmbrTJjKr31NAOgV7WpnwhTt5YLbo05O0=
 github.com/dnb-hugo/components/renderhooks v1.0.13 h1:acgVilneMLKKixRFqmVvC0ERBLbcxnF9KI2Pl4SFMAk=

@@ -4,7 +4,7 @@ go 1.16
 
 require (
 	github.com/dnb-hugo/components/functions v1.0.35 // indirect
-	github.com/dnb-hugo/components/opensearch v1.0.8 // indirect
+	github.com/dnb-hugo/components/opensearch v1.0.9 // indirect
 	github.com/dnb-hugo/components/pwa v1.1.13 // indirect
 	github.com/dnb-hugo/components/renderhooks v1.0.13 // indirect
 	github.com/dnb-hugo/components/robots v1.0.8 // indirect
