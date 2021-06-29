@@ -4,7 +4,6 @@
 {{ range .AlternativeOutputFormats -}}
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
 {{ end -}}
-<link rel="search" href="/opensearch.xml" type="application/opensearchdescription+xml" title="{{ site.Title }} | Search">
 {{ with .Params.robotsdisallow }}
 	<meta name="robots" content="noindex, nofollow, noarchive">
 {{ else }}
