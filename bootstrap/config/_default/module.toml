@@ -73,7 +73,7 @@ ignoreConfig = false
 ignoreImports = false
 
 [[imports]]
-path = "github.com/dnb-hugo/debugprint"
+path = "github.com/dnb-hugo/debug"
 disable = false
 ignoreConfig = false
 ignoreImports = false
