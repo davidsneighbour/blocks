@@ -13,8 +13,6 @@
   {{ $isSingle := true }}
 {{ end }}
 
-{{ partial "debugprint" . }}
-
 {{- .Scratch.Add "trace" (slice "<partials/content/header.html>") -}}
 <header>
   <h1>{{- .Title | safeHTML -}}</h1>
