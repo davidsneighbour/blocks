@@ -25,6 +25,12 @@ ignoreConfig = false
 ignoreImports = false
 
 [[module.imports]]
+path = "github.com/dnb-hugo/debug"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
+[[module.imports]]
 path = "github.com/dnb-hugo/components/pwa"
 disable = false
 ignoreConfig = false
