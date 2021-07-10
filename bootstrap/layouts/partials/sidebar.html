@@ -1,11 +1,9 @@
 {{ if eq (.Scratch.Get "hasSidebar") true }}
   <section id="sidebar-1">
     {{- partial "func/hook.html" ( dict "hook" "sidebar-start" "context" . ) -}}
-
     {{ range $.Param "dnb.sidebar.items" }}
       {{ partialCached ( printf "sidebar/widget-%s.html" . ) $.Page $.Lang }}
     {{ end }}
-
     {{ range site.Params.mainSections }}
       {{ $section := site.GetPage "section" . }}
       {{ $posts := where site.RegularPages "Section" . }}
@@ -20,7 +18,6 @@
         </ul>
       {{ end }}
     {{ end }}
-
     {{- partial "func/hook.html" ( dict "hook" "sidebar-end" "context" . ) -}}
   </section>
 {{ end }}

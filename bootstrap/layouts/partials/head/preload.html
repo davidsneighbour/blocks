@@ -1,0 +1,12 @@
+{{- range $key, $value := $.Site.Data.dnb -}}
+  {{- if isset $value "config" -}}
+    {{- if isset $value.config "plugins" -}}
+      {{- if isset $value.config.plugins "preload" -}}
+        {{- partial "debug.html" (dict "message" (printf "loading preload configuration for %s" $key) "severity" "debug") -}}
+        {{- range $value.config.plugins.preload -}}
+          <link rel="preload" href="{{ .href | absURL }}" as="{{ .as }}" type="{{ .type }}"{{ with .crossorigin }} crossorigin{{ end }}>
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

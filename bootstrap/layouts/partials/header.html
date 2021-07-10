@@ -18,10 +18,9 @@
           {{ $menu := index site.Menus ($config.header.menu | default "main") }}
           {{ range $menu }}
             <a href="{{ .URL }}"
-                    {{- if eq .Page nil }} target="_blank" rel="noopener noreferrer" {{ end -}}
-                    {{ if or (eq $currentPage.Section .Identifier) ($currentPage.IsMenuCurrent $config.header.menu .) ($currentPage.HasMenuCurrent $config.header.menu .) (and (eq $currentPage.Type "posts") (eq .Identifier "archive" )) (and (eq $currentPage.Kind "taxonomy") (eq .Identifier "archive" )) }}
-                      class="active"
-                    {{ end }}
+              {{ if or (eq $currentPage.Section .Identifier) ($currentPage.IsMenuCurrent $config.header.menu .) ($currentPage.HasMenuCurrent $config.header.menu .) (and (eq $currentPage.Type "posts") (eq .Identifier "archive" )) (and (eq $currentPage.Kind "taxonomy") (eq .Identifier "archive" )) }}
+                class="active"
+              {{ end }}
             >
               {{ with .Pre }}
                 <span aria-hidden="true">{{ partialCached (print .) . $.Lang }}</span>&nbsp;

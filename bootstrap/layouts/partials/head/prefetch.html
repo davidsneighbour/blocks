@@ -1,0 +1,40 @@
+{{- range $key, $value := $.Site.Data.dnb -}}
+  {{- if isset $value "config" -}}
+    {{- if isset $value.config "plugins" -}}
+      {{- if isset $value.config.plugins "prefetch" -}}
+        {{- partial "debug.html" (dict "message" (printf "loading prefetch configuration for %s" $key) "severity" "debug") -}}
+        {{- range $value.config.plugins.prefetch -}}
+            <link rel="prefetch" href="{{- .href | absURL -}}">
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- /*
+<link rel="preload" href="image.png" as="image/script/style/font" >
+<link rel="preload" href="https://example.com/fonts/font.woff" as="font" crossorigin>
+https://fetch.spec.whatwg.org/#concept-request-destination
+<link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="script" href="async_script.js"
+onload="var script = document.createElement('script');
+        script.src = this.href;
+        document.body.appendChild(script);">
+<link rel="preload" as="image" href="map.png" media="(max-width: 600px)">
+<link rel="preload" as="script" href="map.js" media="(min-width: 601px)">
+Link: <thing_to_load.js>;rel="preload";as="script"
+Link: <thing_to_load.woff2>;rel="preload";as="font";crossorigin
+
+audio: Audio file, as typically used in <audio>.
+document: An HTML document intended to be embedded by a <frame> or <iframe>.
+embed: A resource to be embedded inside an <embed> element.
+fetch: Resource to be accessed by a fetch or XHR request, such as an ArrayBuffer or JSON file.
+font: Font file.
+image: Image file.
+object: A resource to be embedded inside an <object> element.
+script: JavaScript file.
+style: CSS stylesheet.
+track: WebVTT file.
+worker: A JavaScript web worker or shared worker.
+video: Video file, as typically used in <video>.
+
+*/ -}}

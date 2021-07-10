@@ -8,6 +8,8 @@
 <meta name="viewport" content="{{- $config.head.viewport | default "width=device-width, initial-scale=1, shrink-to-fit=no" -}}">
 <title>{{- block "title" . -}}{{- with .Title -}}{{- . | plainify }} | {{ end -}}{{- .Site.Title | plainify -}}{{- end -}}</title>
 {{- partial "func/hook.html" ( dict "hook" "head-start" "context" . ) -}}
+{{- partial "head/prefetch.html" . -}}
+{{- partial "head/preload.html" . -}}
 {{- /* important meta tags */ -}}{{- partial "head/metadata.html" . -}}
 {{- /* stylesheets */ -}}{{- partial "head/stylesheets.html" . -}}
 {{- /* static meta tags */ -}}{{- partialCached "head/static-metadata.html" . -}}
@@ -15,8 +17,6 @@
 {{- /* open search meta data */ -}}{{- $partialOpensearch := "head/opensearch.html" -}}
 {{- if templates.Exists ( printf "partials/%s" $partialOpensearch ) -}}
   {{- partialCached "head/opensearch.html" . -}}
-{{ else }}
-  {{ warnf "bla" }}"}}
 {{- end -}}
 {{- /* web monetization tag */ -}}{{- partialCached "head/webmonetization.html" . -}}
 {{- /* webmanifest partial (if it exists)  */ -}}{{- partialCached "head/webmanifest.html" . -}}

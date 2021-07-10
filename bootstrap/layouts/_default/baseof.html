@@ -1,14 +1,14 @@
 {{- if eq true (site.Params.build | default true) -}}
-  {{- .Scratch.Add "trace" (slice "<_default/baseof.html>") -}}
+  {{- .Scratch.Add "trace" (slice "<blocks/bootstrap/_default/baseof.html>") -}}
   {{- $config := index site.Data.dnb "blocks-bootstrap" "config" -}}
   {{- .Scratch.Set "hasSidebar" false -}}
   {{- if isset $config "layout" }}
-    {{ if isset $config.layout "sidebar_enabled" }}
-      {{ if eq $config.layout.sidebar_enabled true }}
+    {{- if isset $config.layout "sidebar_enabled" -}}
+      {{- if eq $config.layout.sidebar_enabled true -}}
         {{- .Scratch.Set "hasSidebar" true -}}
       {{- end -}}
-    {{ end }}
-  {{ end }}
+    {{- end -}}
+  {{- end -}}
   {{- .Scratch.Set "enableTemplateWarnings" true -}}
   {{- if (and (isset ($.Param "dnb") "enableTemplateWarnings") (eq ($.Param "dnb.enableTemplateWarnings") false )) -}}
     {{- .Scratch.Set "enableTemplateWarnings" false -}}
@@ -19,7 +19,6 @@
   <head>
     {{- partial "head.html" . -}}
   </head>
-
   <body id="{{- site.Params.Siteslug | default "bootstrap" -}}">
   {{- partial "func/hook.html" ( dict "hook" "body-start" "context" . ) -}}
   {{- partial "header.html" . -}}
@@ -39,7 +38,7 @@
   {{- partial "func/hook.html" ( dict "hook" "container-end" "context" . ) -}}
   {{- partial "footer.html" . -}}
   {{- partial "func/hook.html" ( dict "hook" "body-end" "context" . ) -}}
-  {{- .Scratch.Add "trace" (slice "</_default/baseof.html>") -}}
+  {{- .Scratch.Add "trace" (slice "</blocks/bootstrap/_default/baseof.html>") -}}
   {{- partial "global/debugging.html" . -}}
   </body>
   </html>

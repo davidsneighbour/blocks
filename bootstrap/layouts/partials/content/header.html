@@ -1,24 +1,45 @@
+<!-- setup page layout -->
+{{ $isSection := false }}
+{{ $isSingle := false }}
+{{ $isList := false }}
+{{ with (index site.Params.dnb.sections .Section) }}
+  {{ $config := . }}
+{{ end }}
+{{ if eq .Kind "section" }}
+  {{ $isSection := true }}
+  {{ $isSingle := false }}
+{{ else if eq .Kind "page" }}
+  {{ $isSection := false }}
+  {{ $isSingle := true }}
+{{ end }}
+
+{{ partial "debugprint" . }}
+
 {{- .Scratch.Add "trace" (slice "<partials/content/header.html>") -}}
 <header>
   <h1>{{- .Title | safeHTML -}}</h1>
-  <div class="d-flex justify-content-between">
+
+  {{ if $isSingle }}
+  <div class="row">
     {{ with .Keywords }}
-      <div class="d-flex justify-content-between">
-      <div class="keywords">
-        {{- range . -}}
-          <span class="badge bg-info me-3 d-inline-block">{{- . | upper -}}</span>
-        {{- end -}}
+      <div class="col col-md-12">
+        <div class="keywords">
+          {{- range . -}}
+            <span class="badge bg-info me-2">{{- . | upper -}}</span>
+          {{- end -}}
+        </div>
       </div>
-    </div>
     {{ end }}
-    <p>Last Modified:
+    <p class="col col-md-12">
+      Last Modified:
       <span title="{{- with partial "func/formatOrdinalDate.html" (dict "format" "January 2%s, 2006 at 15:04 UTCMST:00" "date" .Lastmod ) -}}{{- . -}}{{- end -}}">
-          {{- .Lastmod.Format "January 2, 2006" -}}
-          <a href="#github-info" aria-label="Learn more about this...">
-            {{- partialCached "bsicon.html" "info-circle" "info-circle" -}}
-          </a>
-        </span>
+        {{- .Lastmod.Format "January 2, 2006" -}}
+        <a href="#github-info" aria-label="Learn more about this...">
+          {{- partialCached "bsicon.html" "info-circle" "info-circle" -}}
+        </a>
+      </span>
     </p>
   </div>
+  {{ end }}
 </header>
 {{- .Scratch.Add "trace" (slice "<_partials/content/header.html>") -}}

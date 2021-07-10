@@ -1,18 +1,18 @@
 {{- .Scratch.Add "trace" (slice "<blocks/partials/head/metadata.html>") -}}
-{{/*<base href="{{ .Site.BaseURL }}">*/}}
+{{- /*<base href="{{ .Site.BaseURL }}">*/ -}}
 <link rel="canonical" href="{{ .Permalink }}">
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}">
-{{ range .AlternativeOutputFormats -}}
+{{- range .AlternativeOutputFormats -}}
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
-{{ end -}}
-{{ with .Params.robotsdisallow }}
+{{- end -}}
+{{- with .Params.robotsdisallow -}}
 	<meta name="robots" content="noindex, nofollow, noarchive">
-{{ else }}
+{{- else -}}
 	<meta name="robots" content="index, follow, archive">
-{{ end }}
-{{ if .IsTranslated }}
-  {{ range .Translations }}
-    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
-  {{ end }}
-{{ end }}
+{{- end -}}
+{{- if .IsTranslated -}}
+  {{- range .Translations -}}
+    <link rel="alternate" hreflang="{{- .Language.Lang -}}" href="{{- .Permalink -}}" title="{{- .Language.LanguageName -}}">
+  {{- end -}}
+{{- end -}}
 {{- .Scratch.Add "trace" (slice "</blocks/partials/head/metadata.html>") -}}
