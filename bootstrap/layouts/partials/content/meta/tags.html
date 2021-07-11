@@ -1,0 +1,6 @@
+{{ with .Params.Tags }}
+  {{- range . -}}
+    <a href="{{ "/tag/" | relLangURL }}{{ . | urlize }}"
+       class="badge bg-info me-1">{{- . | upper -}}</a>
+  {{- end -}}
+{{ end }}

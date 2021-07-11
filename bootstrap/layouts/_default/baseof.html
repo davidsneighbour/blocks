@@ -1,4 +1,16 @@
 {{- if eq true (site.Params.build | default true) -}}
+
+  {{- /*
+
+  Kind:
+  - page
+  - section
+  - home
+  - term
+  - taxonomy
+
+  */ -}}
+
   {{- .Scratch.Add "trace" (slice "<blocks/bootstrap/_default/baseof.html>") -}}
   {{- $config := index site.Data.dnb "blocks-bootstrap" "config" -}}
   {{- .Scratch.Set "hasSidebar" false -}}
@@ -19,7 +31,7 @@
   <head>
     {{- partial "head.html" . -}}
   </head>
-  <body id="{{- site.Params.Siteslug | default "bootstrap" -}}">
+  <body id="{{- site.Params.Siteslug | default "bootstrap" -}}" class="is--kind-{{ .Kind }} is--section-{{ .Section }}">
   {{- partial "func/hook.html" ( dict "hook" "body-start" "context" . ) -}}
   {{- partial "header.html" . -}}
   {{- partial "func/hook.html" ( dict "hook" "container-start" "context" . ) -}}
@@ -29,6 +41,7 @@
         {{- partial "func/hook.html" ( dict "hook" "content-start" "context" . ) -}}
         {{- block "main" . -}}{{- end -}}
         {{- partial "func/hook.html" ( dict "hook" "content-end" "context" . ) -}}
+        {{- partial "debugpage.html" . . -}}
       </div>
       {{- if eq (.Scratch.Get "hasSidebar") true -}}
         {{- partial "sidebar.html" . -}}

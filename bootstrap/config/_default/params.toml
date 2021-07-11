@@ -67,20 +67,24 @@ width = 200
 height = 206
 copyline = ""
 
-[dnb.layouts]
-[[dnb.layouts.blog]]
-showTags = true
-showComments = true
-listLayout = "preview"
+[dnb.sections]
+[dnb.sections.default]
+listLayout = "default"
 singleLayout = "default"
-[dnb.layouts.blog.meta]
-topLeft = ["tags"]
-topRight = ["date"]
-bottomLeft = []
-bottomRight = []
+meta = [
+ "tags", "date", "author", "comments"
+]
 
-[[dnb.layouts.newsletter]]
-showTags = false
-showComments = false
+[dnb.sections.news]
+listLayout = "card"
+singleLayout = "default"
+meta = [
+  "tags", "date", "", ""
+]
+
+[dnb.sections.newsletter]
 listLayout = "link"
 singleLayout = "default"
+meta = [
+  "", "", "", ""
+]

@@ -1,0 +1,15 @@
+{{- /*
+Setup configuration array based on section name.
+*/ -}}
+{{- /* Default settings */ -}}
+{{-
+  $config := dict
+    "listLayout" "default"
+    "singleLayout" "default"
+    "meta" (slice "tags" "date" "author" "comments")
+-}}
+{{- /* if a configuration for the specified section exists then use that one */ -}}
+{{- with (index site.Params.dnb.sections .) -}}
+  {{- $config = collections.Merge $config . -}}
+{{- end -}}
+{{- return $config -}}

@@ -1,10 +1,18 @@
 {{- define "main" -}}
   {{- .Scratch.Add "trace" (slice "<blocks/bootstrap/_default/taxonomy.html>") -}}
-  {{ "<!-- TAXONOMY -->" | safeHTML }}
-  {{- partial "content/header.html" . -}}
-  <div class="content">{{- .Content -}}</div>
+  {{- "<!-- TAXONOMY -->" | safeHTML -}}
+  <div class="post">
+    <header>
+      <h1>{{- .Title | safeHTML -}}</h1>
+    </header>
+    {{ with .Content }}
+      <div class="post--content">
+        {{- . -}}
+      </div>
+    {{ end }}
+  </div>
   {{- range .Pages -}}
-    {{ partial "content/content-card.html" . }}
+    {{- partial "content/post.html" (dict "context" .) -}}
   {{- end -}}
   {{- .Scratch.Add "trace" (slice "</blocks/bootstrap/_default/taxonomy.html>") -}}
 {{- end -}}

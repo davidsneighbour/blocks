@@ -1,8 +1,11 @@
 {{- define "main" -}}
   {{- $config := index site.Data.dnb "blocks-bootstrap" "config" -}}
+  {{- .Scratch.Add "trace" (slice "<blocks/bootstrap/_default/list.html>") -}}
+  {{- "<!-- HOME -->" | safeHTML -}}
   {{- if eq $config.homepage.type "single" -}}
     {{- partial "home/single.html" . -}}
   {{- else -}}
     {{- partial "home/list.html" . -}}
   {{- end -}}
+  {{- .Scratch.Add "trace" (slice "</blocks/bootstrap/_default/list.html>") -}}
 {{- end -}}

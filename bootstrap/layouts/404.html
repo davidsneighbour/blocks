@@ -1,0 +1,7 @@
+{{- define "main" -}}
+  {{- $config := index site.Data.dnb "blocks-bootstrap" "config" -}}
+  {{- .Scratch.Add "trace" (slice "<blocks/bootstrap/404.html>") -}}
+  {{- "<!-- 404 -->" | safeHTML -}}
+  {{- partial "content/post.html" (dict "context" .) -}}
+  {{- .Scratch.Add "trace" (slice "</blocks/bootstrap/404.html>") -}}
+{{- end -}}

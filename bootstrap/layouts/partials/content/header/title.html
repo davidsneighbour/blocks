@@ -1,0 +1,5 @@
+{{ if eq .level "2" }}
+  <h2>{{- .title | safeHTML -}}</h2>
+{{ else }}
+  <h1>{{- .title | safeHTML -}}</h1>
+{{ end }}

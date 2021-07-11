@@ -1,0 +1,6 @@
+{{/*
+{{ range partial "GetFeatured.html" 5 }}
+  [...]
+{{ end }}
+*/}}
+{{ return first . (where site.RegularPages "Params.featured" true) }}

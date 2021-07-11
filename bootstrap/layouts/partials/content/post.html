@@ -1,27 +1,57 @@
-<!-- setup page layout -->
-{{- $isSection := false -}}
-{{- $isSingle := false -}}
-{{- $layoutLists := "content/content-default.html" -}}
-{{- $layoutPage := "content/content-default.html" -}}
+<!-- retrieve data -->
+{{- $page := .context -}}
+{{- $section := .section | default "default" -}}
+{{- $level := .level | default "2" -}}
+{{- $isSection := true -}}
+{{- if eq $level "1" -}}
+{{- $isSection = false -}}
+{{- end -}}
 
-{{- $section := (.Section | default "default") -}}
+<!-- setup page layout -->
+{{- $layoutLists := "content/post/default.html" -}}
+{{- $layoutPage := "content/post/default.html" -}}
 {{- $config := partialCached "func/getSectionConfig.html" $section $section -}}
 
-{{ if eq .Kind "section" }}
-  {{ $isSection := true }}
-{{ else if eq .Kind "page" }}
-  {{ $isSingle := true }}
+{{- partialCached "debugprint" $config -}}
+
+<!-- post start -->
+<article class="post">
+
+<!-- header -->
+<header>
+  {{- partial "content/header/title.html" (dict "title" $page.Title "level" $level) -}}
+  <!-- header meta data -->
+  <div class="row">
+    <div class="col col-md-6 text-start">
+      {{ with index $config.meta 0 }}
+        {{- partial (printf "content/meta/%s.html" .) $page -}}
+      {{ end }}
+    </div>
+    <div class="col col-md-6 text-end">
+      {{ with index $config.meta 1 }}
+        {{- partial (printf "content/meta/%s.html" .) $page -}}
+      {{ end }}
+    </div>
+  </div>
+</header>
+{{ with .Content }}
+  <div class="content">
+    {{- . -}}
+  </div>
 {{ end }}
 
+<!-- content parts -->
 {{- with $config.listLayout -}}
-  {{- $layoutLists = printf "content/content-%s.html" . -}}
+  {{- $layoutLists = printf "content/post/%s.html" . -}}
 {{- end -}}
 {{- with $config.pageLayout -}}
-  {{- $layoutPage := printf "content/content-%s.html" . -}}
+  {{- $layoutPage := printf "content/post/%s.html" . -}}
+{{- end -}}
+{{- with $isSection -}}
+  {{- partial $layoutLists $page -}}
+{{- else -}}
+  {{- partial $layoutPage $page -}}
 {{- end -}}
 
-{{- with $isSection -}}
-  {{- partial $layoutLists . -}}
-{{- else -}}
-  {{- partial $layoutPage . -}}
-{{- end -}}
+<!-- post end -->
+</article>

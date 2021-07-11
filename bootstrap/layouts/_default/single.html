@@ -1,7 +1,6 @@
 {{- define "main" -}}
   {{- .Scratch.Add "trace" (slice "<blocks/bootstrap/_default/single.html>") -}}
-  {{ "<!-- SINGLE -->" | safeHTML }}
-  {{- partial "content/header.html" . -}}
-  <div class="content">{{- .Content -}}</div>
+  {{- "<!-- SINGLE -->" | safeHTML -}}
+  {{- partial "content/post.html" (dict "context" .) -}}
   {{- .Scratch.Add "trace" (slice "</blocks/bootstrap/_default/single.html>") -}}
 {{- end -}}
