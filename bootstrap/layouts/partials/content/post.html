@@ -1,0 +1,27 @@
+<!-- setup page layout -->
+{{- $isSection := false -}}
+{{- $isSingle := false -}}
+{{- $layoutLists := "content/content-default.html" -}}
+{{- $layoutPage := "content/content-default.html" -}}
+
+{{- $section := (.Section | default "default") -}}
+{{- $config := partialCached "func/getSectionConfig.html" $section $section -}}
+
+{{ if eq .Kind "section" }}
+  {{ $isSection := true }}
+{{ else if eq .Kind "page" }}
+  {{ $isSingle := true }}
+{{ end }}
+
+{{- with $config.listLayout -}}
+  {{- $layoutLists = printf "content/content-%s.html" . -}}
+{{- end -}}
+{{- with $config.pageLayout -}}
+  {{- $layoutPage := printf "content/content-%s.html" . -}}
+{{- end -}}
+
+{{- with $isSection -}}
+  {{- partial $layoutLists . -}}
+{{- else -}}
+  {{- partial $layoutPage . -}}
+{{- end -}}
