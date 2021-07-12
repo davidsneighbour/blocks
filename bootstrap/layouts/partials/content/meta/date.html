@@ -1,1 +1,5 @@
-<span>{{- .Date.Format "2006-01-02" -}}</span>
+<span>
+  {{ partialCached "bsicon.html" "calendar3" "calendar3" }}
+  &nbsp;&nbsp;
+  {{- .Date.Format "2006-01-02" -}}
+</span>

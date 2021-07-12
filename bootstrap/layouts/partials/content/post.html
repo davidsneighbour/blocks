@@ -12,46 +12,47 @@
 {{- $layoutPage := "content/post/default.html" -}}
 {{- $config := partialCached "func/getSectionConfig.html" $section $section -}}
 
-{{- partialCached "debugprint" $config -}}
-
 <!-- post start -->
 <article class="post">
 
-<!-- header -->
-<header>
-  {{- partial "content/header/title.html" (dict "title" $page.Title "level" $level) -}}
-  <!-- header meta data -->
-  <div class="row">
+  <!-- header -->
+  <header>
+    {{- partial "content/header/title.html" (dict "title" $page.Title "level" $level "draft" $page.Draft) -}}
+    <!-- header meta data -->
+    <div class="row">
+      <div class="col col-md-6 text-start">
+        {{ with index $config.meta 0 }}
+          {{- partial (printf "content/meta/%s.html" .) $page -}}
+        {{ end }}
+      </div>
+      <div class="col col-md-6 text-end">
+        {{ with index $config.meta 1 }}
+          {{- partial (printf "content/meta/%s.html" .) $page -}}
+        {{ end }}
+      </div>
+    </div>
+  </header>
+
+  <!-- content parts -->
+  {{ with $page.Content }}
+    <div class="content">
+      {{- . -}}
+    </div>
+  {{ end }}
+
+  <!-- footer meta data -->
+  <footer class="row">
     <div class="col col-md-6 text-start">
-      {{ with index $config.meta 0 }}
+      {{ with index $config.meta 2 }}
         {{- partial (printf "content/meta/%s.html" .) $page -}}
       {{ end }}
     </div>
     <div class="col col-md-6 text-end">
-      {{ with index $config.meta 1 }}
+      {{ with index $config.meta 3 }}
         {{- partial (printf "content/meta/%s.html" .) $page -}}
       {{ end }}
     </div>
-  </div>
-</header>
-{{ with .Content }}
-  <div class="content">
-    {{- . -}}
-  </div>
-{{ end }}
-
-<!-- content parts -->
-{{- with $config.listLayout -}}
-  {{- $layoutLists = printf "content/post/%s.html" . -}}
-{{- end -}}
-{{- with $config.pageLayout -}}
-  {{- $layoutPage := printf "content/post/%s.html" . -}}
-{{- end -}}
-{{- with $isSection -}}
-  {{- partial $layoutLists $page -}}
-{{- else -}}
-  {{- partial $layoutPage $page -}}
-{{- end -}}
+  </footer>
 
 <!-- post end -->
 </article>

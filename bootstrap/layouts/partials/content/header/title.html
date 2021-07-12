@@ -1,5 +1,9 @@
-{{ if eq .level "2" }}
-  <h2>{{- .title | safeHTML -}}</h2>
-{{ else }}
-  <h1>{{- .title | safeHTML -}}</h1>
-{{ end }}
+{{- printf "<h%s>" .level | safeHTML -}}
+  {{- .title | safeHTML -}}
+  {{- if .draft -}}
+    <small class="text-muted">(
+      {{- partialCached "bsicon.html" "pencil-fill" "pencil-fill" -}}&nbsp;
+      <span>DRAFT</span>
+    )</small>
+  {{- end -}}
+{{- printf "</h%s>" .level | safeHTML -}}

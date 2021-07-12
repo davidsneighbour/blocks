@@ -1,6 +1,7 @@
 {{ with .Params.Tags }}
+  {{ partialCached "bsicon.html" "tags-fill" "tags-fill" }}
   {{- range . -}}
     <a href="{{ "/tag/" | relLangURL }}{{ . | urlize }}"
-       class="badge bg-info me-1">{{- . | upper -}}</a>
+       class="ms-2">{{- . | upper -}}</a>
   {{- end -}}
 {{ end }}
