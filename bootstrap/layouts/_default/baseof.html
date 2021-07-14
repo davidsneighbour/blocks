@@ -41,7 +41,6 @@
         {{- partial "func/hook.html" ( dict "hook" "content-start" "context" . ) -}}
         {{- block "main" . -}}{{- end -}}
         {{- partial "func/hook.html" ( dict "hook" "content-end" "context" . ) -}}
-        {{- partial "debugpage.html" . . -}}
       </div>
       {{- if eq (.Scratch.Get "hasSidebar") true -}}
         {{- partial "sidebar.html" . -}}

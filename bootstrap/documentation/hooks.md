@@ -1,6 +1,6 @@
 ## Hooks
 
-@dnb-hugo/blocks uses [layout hooks](https://github.com/dnb-hugo/hooks) so theme developers can add easily extendable theme hooks. 
+@dnb-org/blocks uses [layout hooks](https://github.com/dnb-org/hooks) so theme developers can add easily extendable theme hooks. 
 
 | Hook |  | Notes |
 | --- | --- | --- |

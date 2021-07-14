@@ -1,26 +1,26 @@
 {
-  "name": "@dnb-hugo/blocks-bootstrap",
+  "name": "@dnb-org/blocks-bootstrap",
   "description": "Bootstrap-Blocks for Hugo",
   "version": "1.0.29",
   "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
   "bugs": {
-    "url": "https://github.com/dnb-hugo/blocks/issues"
+    "url": "https://github.com/dnb-org/blocks/issues"
   },
   "commitlint": {
     "extends": [
-      "@dnb-hugo/commitlint-config"
+      "@dnb-org/commitlint-config"
     ]
   },
   "devDependencies": {
-    "@dnb-hugo/browserslist-config": "3.0.13",
-    "@dnb-hugo/commitlint-config": "3.0.13",
-    "@dnb-hugo/eslint-config": "3.0.13",
-    "@dnb-hugo/remark-config": "3.0.13",
-    "@dnb-hugo/standard-version-config": "3.0.13",
-    "@dnb-hugo/stylelint-config": "3.0.13",
-    "@dnb-hugo/textlint-config": "3.0.13"
+    "@dnb-org/browserslist-config": "3.0.13",
+    "@dnb-org/commitlint-config": "3.0.13",
+    "@dnb-org/eslint-config": "3.0.13",
+    "@dnb-org/remark-config": "3.0.13",
+    "@dnb-org/standard-version-config": "3.0.13",
+    "@dnb-org/stylelint-config": "3.0.13",
+    "@dnb-org/textlint-config": "3.0.13"
   },
-  "homepage": "https://github.com/dnb-hugo/blocks/tree/master/bootstrap",
+  "homepage": "https://github.com/dnb-org/blocks/tree/master/bootstrap",
   "license": "MIT",
   "private": true,
   "scripts": {

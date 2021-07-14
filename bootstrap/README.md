@@ -15,7 +15,7 @@ Then add the module to your configuration:
 ```toml
 [module]
 [[module.imports]]
-path = "github.com/dnb-hugo/blocks/bootstrap"
+path = "github.com/dnb-org/blocks/bootstrap"
 ```
 
 The next time you run hugo it will download the latest version of the module.
@@ -25,7 +25,7 @@ The next time you run hugo it will download the latest version of the module.
 To update this module:
 
 ```shell
-hugo mod get -u github.com/dnb-hugo/blocks/bootstrap
+hugo mod get -u github.com/dnb-org/blocks/bootstrap
 ```
 
 To update all modules:

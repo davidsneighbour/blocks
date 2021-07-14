@@ -19,31 +19,31 @@ source = "layouts"
 target = "layouts"
 
 [[module.imports]]
-path = "github.com/dnb-hugo/components/functions"
+path = "github.com/dnb-org/components/functions"
 disable = false
 ignoreConfig = false
 ignoreImports = false
 
 [[module.imports]]
-path = "github.com/dnb-hugo/debug"
+path = "github.com/dnb-org/debug"
 disable = false
 ignoreConfig = false
 ignoreImports = false
 
 [[module.imports]]
-path = "github.com/dnb-hugo/components/pwa"
+path = "github.com/dnb-org/components/pwa"
 disable = false
 ignoreConfig = false
 ignoreImports = false
 
 [[module.imports]]
-path = "github.com/dnb-hugo/components/auditor"
+path = "github.com/dnb-org/components/auditor"
 disable = false
 ignoreConfig = false
 ignoreImports = false
 
 [[module.imports]]
-path = "github.com/dnb-hugo/components/social"
+path = "github.com/dnb-org/components/social"
 disable = false
 ignoreConfig = false
 ignoreImports = false
