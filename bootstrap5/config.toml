@@ -47,3 +47,9 @@ path = "github.com/dnb-org/components/social"
 disable = false
 ignoreConfig = false
 ignoreImports = false
+
+[[module.imports]]
+path = "github.com/dnb-org/hooks"
+disable = false
+ignoreConfig = false
+ignoreImports = false
