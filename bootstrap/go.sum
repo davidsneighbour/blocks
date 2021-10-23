@@ -1,4 +1,3 @@
-github.com/dnb-org/components/functions v1.4.3/go.mod h1:+GMAcQaK260wZ6ioNPbQY/ruWdBxFxj9PPw7o5p7eu0=
 github.com/dnb-org/components/functions v1.4.4 h1:OKb64ZyA1bh3xU2bhr1oHd58CLxQb+Ezxhnt2UQ1I+U=
 github.com/dnb-org/components/functions v1.4.4/go.mod h1:+GMAcQaK260wZ6ioNPbQY/ruWdBxFxj9PPw7o5p7eu0=
 github.com/dnb-org/components/opensearch v1.4.4 h1:P5UM/fADeDHGmgnffwcg/9lfOAY3bKU1FIhdg2f9vSs=
@@ -13,7 +12,6 @@ github.com/dnb-org/components/sitemap v1.4.4 h1:ItTskDDSV0L0TD1Ygnl8cQ6ulsgu12ze
 github.com/dnb-org/components/sitemap v1.4.4/go.mod h1:Nn+4/+uAGQAId5lvyRyN/sLYk+FjA0e+jUMqOTau/fU=
 github.com/dnb-org/components/social v1.4.4 h1:r5yHIWTSiyhX3rEJcfbyED9GMqsqsjrNGy/KzAfIWXQ=
 github.com/dnb-org/components/social v1.4.4/go.mod h1:dO48C/ph2IwQTrwJA7cWsKuPeP5sXh6lewj6OunUldM=
-github.com/dnb-org/debug v1.3.3/go.mod h1:0z/MDK1qgyqHmMM8mSrexsoPSTpJgIsNu3r6nw5zHAU=
 github.com/dnb-org/debug v1.3.4 h1:z/RwloIg1pTXRD7NToX7f/k7uS9Vn43rEGcUMgQv7fc=
 github.com/dnb-org/debug v1.3.4/go.mod h1:0z/MDK1qgyqHmMM8mSrexsoPSTpJgIsNu3r6nw5zHAU=
 github.com/dnb-org/hooks v1.0.16 h1:e/xPlrD0jtCtXxwgnAiOdhTM4e42JXRW4SXudUJQGRo=
