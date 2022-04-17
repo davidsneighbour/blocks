@@ -1,17 +1,17 @@
-module github.com/dnb-org/blocks/bootstrap
+module github.com/davidsneighbour/blocks/bootstrap
 
 go 1.16
 
 require (
-	github.com/dnb-org/components/functions v1.4.4 // indirect
-	github.com/dnb-org/components/opensearch v1.4.4 // indirect
-	github.com/dnb-org/components/pwa v1.4.4 // indirect
-	github.com/dnb-org/components/renderhooks v1.4.4 // indirect
-	github.com/dnb-org/components/robots v1.4.4 // indirect
-	github.com/dnb-org/components/sitemap v1.4.4 // indirect
-	github.com/dnb-org/components/social v1.4.4 // indirect
-	github.com/dnb-org/debug v1.3.4 // indirect
-	github.com/dnb-org/hooks v1.0.16 // indirect
-	github.com/dnb-org/libraries/bootstrap-icons v1.5.3 // indirect
-	github.com/dnb-org/libraries/bootstrap5/v2 v2.2.2 // indirect
+	github.com/davidsneighbour/hugo-debug v1.5.5 // indirect
+	github.com/davidsneighbour/hugo-functions v1.1.0 // indirect
+	github.com/davidsneighbour/hugo-hooks v1.3.2 // indirect
+	github.com/davidsneighbour/hugo-icons v1.2.0 // indirect
+	github.com/davidsneighbour/hugo-opensearch v0.1.0 // indirect
+	github.com/davidsneighbour/hugo-pwa v0.2.0 // indirect
+	github.com/davidsneighbour/hugo-renderhooks v1.5.0 // indirect
+	github.com/davidsneighbour/hugo-robots v1.1.0 // indirect
+	github.com/davidsneighbour/hugo-sitemap v0.1.0 // indirect
+	github.com/davidsneighbour/hugo-social v0.1.2 // indirect
+	github.com/davidsneighbour/libraries/bootstrap5/v2 v2.2.5 // indirect
 )

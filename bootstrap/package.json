@@ -1,26 +1,26 @@
 {
-  "name": "@dnb-org/blocks-bootstrap",
+  "name": "@davidsneighbour/blocks-bootstrap",
   "description": "Bootstrap-Blocks for Hugo",
   "version": "1.0.30",
   "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
   "bugs": {
-    "url": "https://github.com/dnb-org/blocks/issues"
+    "url": "https://github.com/davidsneighbour/blocks/issues"
   },
   "commitlint": {
     "extends": [
-      "@dnb-org/commitlint-config"
+      "@davidsneighbour/commitlint-config"
     ]
   },
   "devDependencies": {
-    "@dnb-org/browserslist-config": "3.4.0",
-    "@dnb-org/commitlint-config": "3.4.1",
-    "@dnb-org/eslint-config": "3.4.14",
-    "@dnb-org/remark-config": "3.4.1",
-    "@dnb-org/standard-version-config": "3.4.0",
-    "@dnb-org/stylelint-config": "3.4.0",
-    "@dnb-org/textlint-config": "3.4.0"
+    "@davidsneighbour/browserslist-config": "^4.0.1",
+    "@davidsneighbour/commitlint-config": "^4.0.1",
+    "@davidsneighbour/eslint-config": "^4.0.1",
+    "@davidsneighbour/remark-config": "^4.0.1",
+    "@davidsneighbour/standard-version-config": "^4.0.1",
+    "@davidsneighbour/stylelint-config": "^4.0.1",
+    "@davidsneighbour/textlint-config": "^4.0.1"
   },
-  "homepage": "https://github.com/dnb-org/blocks/tree/master/bootstrap",
+  "homepage": "https://github.com/davidsneighbour/blocks/tree/main/bootstrap",
   "license": "MIT",
   "private": true,
   "scripts": {
