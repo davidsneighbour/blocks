@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.31](https://github.com/dnb-org/blocks/compare/bootstrap/v1.0.30...bootstrap/v1.0.31) (2022-04-17)
+
+
+### Chore
+
+* **deps:** update dependencies ([a1bcffe](https://github.com/dnb-org/blocks/commit/a1bcffe8e2a2b8337c9e577ffdfef6d28d557123))
+
+
+### Build System
+
+* **fix:** fix release script paths ([40549cb](https://github.com/dnb-org/blocks/commit/40549cb0a1282de57c517a294fb613961de241a3))
+* update Github organization name & use newer dependencies ([#289](https://github.com/dnb-org/blocks/issues/289)) ([13dd06d](https://github.com/dnb-org/blocks/commit/13dd06d4213d8bf47991337e95fde7c8734ef90f))
+
 ### [1.0.30](https://github.com/davidsneighbour/blocks/compare/bootstrap/v1.0.29...bootstrap/v1.0.30) (2021-10-23)
 
 

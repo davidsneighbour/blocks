@@ -1,7 +1,7 @@
 {
   "name": "@davidsneighbour/blocks-bootstrap",
   "description": "Bootstrap-Blocks for Hugo",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
   "bugs": {
     "url": "https://github.com/davidsneighbour/blocks/issues"
