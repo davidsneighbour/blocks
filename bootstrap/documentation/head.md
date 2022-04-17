@@ -39,7 +39,7 @@ and their individual configuration, if required:
 
 ## Open Search
 
-Blocks uses [DNB Hugo Components / OpenSearch](https://github.com/dnb-org/components/tree/main/opensearch) to add 
+Blocks uses [Hugo Components / OpenSearch](https://github.com/davidsneighbour/hugo-opensearch) to add 
 open search specifications to the website. 
 
 
