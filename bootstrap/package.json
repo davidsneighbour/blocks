@@ -18,7 +18,7 @@
     "@davidsneighbour/remark-config": "^4.0.1",
     "@davidsneighbour/standard-version-config": "^4.0.1",
     "@davidsneighbour/stylelint-config": "^4.0.1",
-    "@davidsneighbour/textlint-config": "^4.0.1"
+    "@davidsneighbour/textlint-config": "^5.0.16"
   },
   "homepage": "https://github.com/davidsneighbour/blocks/tree/main/bootstrap",
   "license": "MIT",
