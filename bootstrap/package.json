@@ -15,7 +15,7 @@
     "@davidsneighbour/browserslist-config": "^4.0.1",
     "@davidsneighbour/commitlint-config": "^4.0.1",
     "@davidsneighbour/eslint-config": "^4.0.1",
-    "@davidsneighbour/remark-config": "^4.0.1",
+    "@davidsneighbour/remark-config": "^5.1.0",
     "@davidsneighbour/standard-version-config": "^4.0.1",
     "@davidsneighbour/stylelint-config": "^4.0.1",
     "@davidsneighbour/textlint-config": "^4.0.1"
